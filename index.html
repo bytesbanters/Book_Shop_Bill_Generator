@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asad Book Agency – Bill Generator</title>
+<style>
+/* ── RESET ────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── TOOLBAR (screen only, never printed) ─────────── */
+.toolbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background: #1b2a3b;
+  color: #e8eaf0;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.toolbar .brand {
+  font-size: 15px;
+  font-weight: 700;
+  color: #78c8e0;
+  margin-right: 6px;
+  white-space: nowrap;
+}
+.toolbar .divider { width: 1px; height: 26px; background: #3a5070; margin: 0 4px; }
+.toolbar label { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #aac; white-space: nowrap; }
+.toolbar input[type="text"],
+.toolbar input[type="date"],
+.toolbar input[type="number"] {
+  background: #253545;
+  border: 1px solid #3d5a70;
+  color: #eee;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color .15s;
+}
+.toolbar input[type="text"]:focus,
+.toolbar input[type="date"]:focus,
+.toolbar input[type="number"]:focus { border-color: #78c8e0; }
+.toolbar input[type="text"]   { width: 280px; }
+.toolbar input[type="date"]   { width: 148px; }
+.toolbar input[type="number"] { width: 58px;  }
+#inp_ntn { width: 110px; }
+.tbtn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: filter .15s;
+}
+.tbtn:hover { filter: brightness(1.15); }
+.tbtn-add    { background: #246b33; color: #fff; }
+.tbtn-del    { background: #7b1a1a; color: #fff; }
+.tbtn-print  { background: #e8c030; color: #111; font-size: 14px; padding: 7px 22px; margin-left: auto; }
+
+/* ── PAGE BACKGROUND ──────────────────────────────── */
+body { background: #7a7a7a; padding-top: 58px; }
+#pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 22px 0 40px;
+}
+
+/* ── BILL PAGE ────────────────────────────────────── */
+.bill-page {
+  width: 210mm;
+  height: 297mm;
+  background: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.45);
+  overflow: hidden;
+}
+
+/* ── HEADER / FOOTER IMAGES ───────────────────────── */
+.bill-header-img {
+  width: 97%;
+  height: 16%;
+  padding-left: 3%;
+  padding-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bill-footer-img {
+  width: 97%;
+  height: 5%;
+  padding-left: 3%;
+  padding-bottom: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── BILL BODY (between images) ───────────────────── */
+.bill-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2mm 6mm 1mm 6mm;
+  min-height: 0;
+}
+
+/* ── NAME / DATE ROW ──────────────────────────────── */
+.name-date-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 1.5mm;
+  margin-bottom: 1mm;
+}
+.nd-name-wrap { display: flex; align-items: baseline; gap: 3px; }
+.nd-date-wrap { display: flex; align-items: baseline; gap: 3px; white-space: nowrap; }
+.nd-date-val  { text-decoration: underline; }
+/* Inline inputs in name/date row */
+.nd-input {
+  border: none;
+  border-bottom: 1px solid #bbb;
+  outline: none;
+  font-size: 9pt;
+  font-weight: bold;
+  font-family: inherit;
+  background: transparent;
+  color: #111;
+  padding: 0 2px;
+  min-width: 30px;
+}
+#inp_name_display { width: 260px; }
+#inp_date_display { width: 90px;  text-align: center; text-decoration: underline; }
+
+/* ── NTN ROW ──────────────────────────────────────── */
+.ntn-row {
+  font-size: 8.5pt;
+  font-weight: bold;
+  margin-bottom: 1.5mm;
+}
+
+/* ── BILL TABLE ───────────────────────────────────── */
+.bill-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  flex: 1;
+}
+.bill-table th, .bill-table td {
+  border: 1px solid #111;
+  padding: 0 3px;
+  vertical-align: middle;
+  height: 6mm;
+}
+.bill-table thead th {
+  font-size: 8pt;
+  font-weight: bold;
+  text-align: center;
+  background: #fff;
+  line-height: 1.2;
+  height: 9mm;
+}
+
+/* Column widths */
+.col-sr     { width: 6%;  }
+.col-title  { width: 30%; }
+.col-author { width: 15%; }
+.col-qty    { width: 5%;  }
+.col-rate   { width: 10%; }
+.col-tp     { width: 10%; }
+.col-disc   { width: 9%;  }
+.col-amt    { width: 15%; }
+
+/* Data cells */
+.bill-table td.sr-td    { text-align: center; font-weight: bold; font-size: 8pt; }
+.bill-table td.title-td { text-align: left;   font-size: 7.8pt; padding-left: 4px; }
+.bill-table td.auth-td  { text-align: left;   font-size: 7.8pt; padding-left: 3px; }
+.bill-table td.qty-td   { text-align: center; font-size: 7.8pt; }
+.bill-table td.num-td   { text-align: right;  font-size: 7.8pt; padding-right: 4px; }
+.bill-table td.calc-td  { text-align: right;  font-size: 7.8pt; padding-right: 4px; color: #111; }
+
+/* Urdu cell */
+.urdu {
+  direction: rtl;
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq',
+               'Traditional Arabic', 'Arial Unicode MS', Arial, serif;
+  text-align: right !important;
+  font-size: 8pt !important;
+}
+
+/* ── ROW HEIGHT BY LANGUAGE ───────────────────────── */
+/* Default rows keep the base height set on th/td above */
+.bill-table tr.row-ur td { height: 8mm !important; }   /* Urdu — taller for Nastaliq */
+
+/* Active-row highlight (screen only, not printed) */
+.bill-table tr.row-active td { background: #fffbe6 !important; }
+@media print { .bill-table tr.row-active td { background: transparent !important; } }
+
+/* Total / B-F rows */
+.total-row td { font-weight: bold; background: #f5f5f5; font-size: 8pt; }
+.bf-row    td { font-weight: bold; background: #eef2ff; font-size: 8pt; }
+.total-row td.lbl-td, .bf-row td.lbl-td {
+  text-align: right;
+  padding-right: 6px;
+}
+.total-row td.cf-td, .bf-row td.cf-td {
+  text-align: left;
+  padding-left: 4px;
+}
+.total-row td.num-td, .bf-row td.num-td {
+  text-align: right;
+  padding-right: 4px;
+}
+
+/* Inline inputs inside table */
+.cell-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 7.8pt;
+  color: #111;
+  padding: 0;
+}
+.cell-input.title-inp  { text-align: left;   padding-left: 2px; }
+.cell-input.auth-inp   { text-align: left;   }
+.cell-input.qty-inp    { text-align: center; }
+.cell-input.rate-inp   { text-align: right;  padding-right: 2px; }
+/* Remove number arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type="number"] { -moz-appearance: textfield; }
+
+/* Page delete button (screen only) */
+.page-del-btn {
+  position: absolute;
+  top: 6px; right: 6px;
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 10;
+  opacity: .85;
+}
+.page-del-btn:hover { opacity: 1; }
+
+/* ── PRINT STYLES ─────────────────────────────────── */
+@media print {
+  @page { size: A4; margin: 0mm; }
+  body  { background: #fff; padding-top: 0; }
+  .toolbar, .page-del-btn { display: none !important; }
+  #pages { padding: 0; gap: 0; }
+
+  .bill-page {
+    box-shadow: none;
+    page-break-after: always;
+    break-after: page;
+  }
+  .bill-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  /* Make inputs invisible on print – show only the value text */
+  .cell-input, .nd-input {
+    border: none !important;
+    background: transparent !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     TOOLBAR  (hidden in print)
+══════════════════════════════════════════════════ -->
+<div class="toolbar" id="toolbar">
+  <span class="brand">📚 Asad Book Agency</span>
+  <div class="divider"></div>
+
+  <label>Name:
+    <input type="text" id="inp_name" placeholder="Customer / Institute Name"
+           oninput="syncGlobal()" style="width:270px">
+  </label>
+
+  <label>Date:
+    <input type="date" id="inp_date" oninput="syncGlobal()">
+  </label>
+
+  <label>NTN #:
+    <input type="text" id="inp_ntn" value="44358920" oninput="syncGlobal()">
+  </label>
+
+  <label>Disc %:
+    <input type="number" id="inp_disc" value="20" min="0" max="100" step="0.5"
+           oninput="recalcAll()">
+  </label>
+
+  <div class="divider"></div>
+  <button class="tbtn" id="langToggle" onclick="toggleRowLang()"
+          title="Click a row first, then press this to switch its height between English (short) and Urdu (tall)"
+          style="background:#2a5a3a;color:#fff;min-width:120px">
+    🌐 EN / اردو
+  </button>
+  <div class="divider"></div>
+  <button class="tbtn tbtn-add"   onclick="addPage()">＋ Add Page</button>
+  <button class="tbtn tbtn-del"   onclick="removeLastPage()">− Remove Last Page</button>
+  <button class="tbtn tbtn-print" onclick="window.print()">🖨 Print / Export PDF</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     BILL PAGES  (printed)
+══════════════════════════════════════════════════ -->
+<div id="pages"></div>
+
+<!-- ═══════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════ -->
+<script>
+/* ── CONSTANTS ─────────────────────────────────────── */
+const ROWS = 25;   // always 25 data rows per page
+
+/* ── STATE ─────────────────────────────────────────── */
+let totalPages = 0;
+
+/* ── BOOT ───────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  // Default today's date
+  const d = new Date();
+  document.getElementById('inp_date').value =
+    `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  addPage();
+});
+
+/* ── ADD PAGE ───────────────────────────────────────── */
+function addPage() {
+  totalPages++;
+  const pn      = totalPages;
+  const isFirst = pn === 1;
+
+  const page = document.createElement('div');
+  page.className  = 'bill-page';
+  page.id         = `page${pn}`;
+  page.dataset.pn = pn;
+
+  /* --- header image --- */
+  page.innerHTML = `<img src="Header.png" class="bill-header-img" alt="">`;
+
+  /* --- body --- */
+  const body = document.createElement('div');
+  body.className = 'bill-body';
+
+  /* name / date row */
+  body.appendChild(makeNameDateRow(pn));
+
+  /* NTN row */
+  const ntnDiv = document.createElement('div');
+  ntnDiv.className = 'ntn-row';
+  ntnDiv.id        = `ntn${pn}`;
+  ntnDiv.innerHTML = `<b>NTN # ${esc(document.getElementById('inp_ntn').value)}</b>`;
+  body.appendChild(ntnDiv);
+
+  /* table */
+  body.appendChild(makeTable(pn, isFirst));
+  page.appendChild(body);
+
+  /* footer image */
+  page.insertAdjacentHTML('beforeend', `<img src="Footer.png" class="bill-footer-img" alt="">`);
+
+  document.getElementById('pages').appendChild(page);
+  updateTotalLabels();
+}
+
+/* ── MAKE NAME/DATE ROW ────────────────────────────── */
+function makeNameDateRow(pn) {
+  const name    = document.getElementById('inp_name').value;
+  const dateVal = fmtDate(document.getElementById('inp_date').value);
+
+  const row = document.createElement('div');
+  row.className = 'name-date-row';
+  row.id        = `ndrow${pn}`;
+  row.innerHTML = `
+    <div class="nd-name-wrap">
+      <b>Name:</b>
+      <span id="nd_name${pn}" class="nd-date-val" style="font-weight:bold">${esc(name)}</span>
+    </div>
+    <div class="nd-date-wrap">
+      <b>Date:</b>
+      <span id="nd_date${pn}" class="nd-date-val">${esc(dateVal)}</span>
+    </div>`;
+  return row;
+}
+
+/* ── MAKE TABLE ─────────────────────────────────────── */
+function makeTable(pn, isFirst) {
+  const table = document.createElement('table');
+  table.className = 'bill-table';
+  table.id        = `tbl${pn}`;
+
+  /* thead */
+  table.innerHTML = `
+    <colgroup>
+      <col class="col-sr">
+      <col class="col-title">
+      <col class="col-author">
+      <col class="col-qty">
+      <col class="col-rate">
+      <col class="col-tp">
+      <col class="col-disc">
+      <col class="col-amt">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="col-sr">Sr.<br>No.</th>
+        <th class="col-title">Title</th>
+        <th class="col-author">Author</th>
+        <th class="col-qty">Qty</th>
+        <th class="col-rate">Rate Rs.</th>
+        <th class="col-tp">Total<br>Price</th>
+        <th class="col-disc">Disc.</th>
+        <th class="col-amt">Amount in<br>Rs.</th>
+      </tr>
+    </thead>`;
+
+  const tbody = document.createElement('tbody');
+  tbody.id = `tbody${pn}`;
+
+  /* B/F row for page 2+ */
+  if (!isFirst) {
+    const bfTr = document.createElement('tr');
+    bfTr.className = 'bf-row';
+    bfTr.id        = `bfrow${pn}`;
+    bfTr.innerHTML = `
+      <td class="sr-td"></td>
+      <td class="lbl-td"><b>TOTAL</b></td>
+      <td class="cf-td"><b>B/F:</b></td>
+      <td></td><td></td><td></td><td></td>
+      <td class="num-td" id="bf_amt${pn}"><b>0</b></td>`;
+    tbody.appendChild(bfTr);
+  }
+
+  /* 25 data rows */
+  const srBase = (pn - 1) * ROWS;
+  for (let i = 0; i < ROWS; i++) {
+    const sr  = srBase + i + 1;
+    const rid = `${pn}_${i}`;
+    const tab = i * 4;
+    const tr  = document.createElement('tr');
+    tr.id = `row_${rid}`;
+    tr.innerHTML = `
+      <td class="sr-td">${sr}</td>
+      <td class="title-td" id="tcell_${rid}">
+        <input class="cell-input title-inp" id="t_${rid}"
+               type="text" autocomplete="off"
+               tabindex="${tab+1}"
+               onfocus="setActiveRow('${rid}')"
+               oninput="onTitle('${rid}',this)">
+      </td>
+      <td class="auth-td" id="acell_${rid}">
+        <input class="cell-input auth-inp" id="a_${rid}"
+               type="text" autocomplete="off"
+               tabindex="${tab+2}"
+               onfocus="setActiveRow('${rid}')">
+      </td>
+      <td class="qty-td">
+        <input class="cell-input qty-inp" id="q_${rid}"
+               type="number" min="1" autocomplete="off"
+               tabindex="${tab+3}"
+               onfocus="setActiveRow('${rid}')"
+               oninput="calcRow('${rid}')">
+      </td>
+      <td class="num-td">
+        <input class="cell-input rate-inp" id="r_${rid}"
+               type="number" min="0" autocomplete="off"
+               tabindex="${tab+4}"
+               onfocus="setActiveRow('${rid}')"
+               oninput="calcRow('${rid}')">
+      </td>
+      <td class="calc-td" id="tp_${rid}"></td>
+      <td class="calc-td" id="dc_${rid}"></td>
+      <td class="calc-td" id="am_${rid}"></td>`;
+    tbody.appendChild(tr);
+  }
+
+  /* Total row */
+  const totTr = document.createElement('tr');
+  totTr.className = 'total-row';
+  totTr.id        = `totrow${pn}`;
+  totTr.innerHTML = `
+    <td class="sr-td"></td>
+    <td class="lbl-td" id="tot_lbl${pn}"><b>GRAND TOTAL</b></td>
+    <td class="cf-td"  id="tot_cf${pn}"></td>
+    <td></td><td></td><td></td><td></td>
+    <td class="num-td" id="tot_amt${pn}"><b>0</b></td>`;
+  tbody.appendChild(totTr);
+
+  table.appendChild(tbody);
+  return table;
+}
+
+/* ── REMOVE LAST PAGE ───────────────────────────────── */
+function removeLastPage() {
+  if (totalPages <= 1) { alert('Cannot remove the only page.'); return; }
+  const el = document.getElementById(`page${totalPages}`);
+  if (el) el.remove();
+  totalPages--;
+  updateTotalLabels();
+}
+
+/* ── SYNC GLOBAL FIELDS (name, date, NTN) ──────────── */
+function syncGlobal() {
+  const name    = document.getElementById('inp_name').value;
+  const dateVal = fmtDate(document.getElementById('inp_date').value);
+  const ntn     = document.getElementById('inp_ntn').value;
+
+  for (let p = 1; p <= totalPages; p++) {
+    const nEl = document.getElementById(`nd_name${p}`);
+    const dEl = document.getElementById(`nd_date${p}`);
+    const ntnEl = document.getElementById(`ntn${p}`);
+    if (nEl)  nEl.textContent  = name;
+    if (dEl)  dEl.textContent  = dateVal;
+    if (ntnEl) ntnEl.innerHTML = `<b>NTN # ${esc(ntn)}</b>`;
+  }
+}
+
+/* ── RECALC SINGLE ROW ──────────────────────────────── */
+function calcRow(rid) {
+  const disc = +document.getElementById('inp_disc').value / 100;
+  const q    = +document.getElementById(`q_${rid}`)?.value || 0;
+  const r    = +document.getElementById(`r_${rid}`)?.value || 0;
+  const tp   = q * r;
+  const d    = Math.round(tp * disc);
+  const am   = tp - d;
+  setCell(`tp_${rid}`, tp);
+  setCell(`dc_${rid}`, d);
+  setCell(`am_${rid}`, am);
+  calcPageTotals(parseInt(rid.split('_')[0]));
+}
+
+/* ── RECALC ALL ROWS ────────────────────────────────── */
+function recalcAll() {
+  const disc = +document.getElementById('inp_disc').value / 100;
+  for (let p = 1; p <= totalPages; p++) {
+    for (let i = 0; i < ROWS; i++) {
+      const rid = `${p}_${i}`;
+      if (!document.getElementById(`q_${rid}`)) continue;
+      const q  = +document.getElementById(`q_${rid}`).value || 0;
+      const r  = +document.getElementById(`r_${rid}`).value || 0;
+      const tp = q * r;
+      const d  = Math.round(tp * disc);
+      const am = tp - d;
+      setCell(`tp_${rid}`, tp);
+      setCell(`dc_${rid}`, d);
+      setCell(`am_${rid}`, am);
+    }
+    calcPageTotals(p);
+  }
+}
+
+/* ── CALC PAGE TOTALS / B-F / C-F ───────────────────── */
+function calcPageTotals(pn) {
+  const disc = +document.getElementById('inp_disc').value / 100;
+
+  // Accumulate running total up to (not including) this page
+  let running = 0;
+  for (let p = 1; p < pn; p++) {
+    for (let i = 0; i < ROWS; i++) {
+      const q = +document.getElementById(`q_${p}_${i}`)?.value || 0;
+      const r = +document.getElementById(`r_${p}_${i}`)?.value || 0;
+      running += Math.round(q * r * (1 - disc));
+    }
+  }
+
+  // This page's items
+  let pageSum = 0;
+  for (let i = 0; i < ROWS; i++) {
+    const q = +document.getElementById(`q_${pn}_${i}`)?.value || 0;
+    const r = +document.getElementById(`r_${pn}_${i}`)?.value || 0;
+    pageSum += Math.round(q * r * (1 - disc));
+  }
+
+  const cfTotal = running + pageSum;
+
+  // Update B/F for this page (= running from previous pages)
+  const bfEl = document.getElementById(`bf_amt${pn}`);
+  if (bfEl) bfEl.innerHTML = `<b>${fmt(running)}</b>`;
+
+  // Update this page's total
+  const totEl = document.getElementById(`tot_amt${pn}`);
+  if (totEl) totEl.innerHTML = `<b>${fmt(cfTotal)}</b>`;
+
+  // Cascade: recalc next pages' B/F
+  if (document.getElementById(`page${pn + 1}`)) calcPageTotals(pn + 1);
+}
+
+/* ── UPDATE C/F vs GRAND TOTAL LABELS ───────────────── */
+function updateTotalLabels() {
+  for (let p = 1; p <= totalPages; p++) {
+    if (!document.getElementById(`page${p}`)) continue;
+    const isLast = (p === totalPages);
+    const lbl = document.getElementById(`tot_lbl${p}`);
+    const cf  = document.getElementById(`tot_cf${p}`);
+    if (lbl) lbl.innerHTML = `<b>${isLast ? 'GRAND TOTAL' : 'TOTAL'}</b>`;
+    if (cf)  cf.innerHTML  = isLast ? '' : '<b>C/F:</b>';
+  }
+  recalcAll();
+}
+
+/* ── ACTIVE ROW TRACKING ────────────────────────────── */
+let activeRid = null;
+
+function setActiveRow(rid) {
+  // Remove highlight from previous row
+  if (activeRid) {
+    document.getElementById(`row_${activeRid}`)?.classList.remove('row-active');
+  }
+  activeRid = rid;
+  document.getElementById(`row_${rid}`)?.classList.add('row-active');
+  updateLangToggle();
+}
+
+/* ── LANGUAGE TOGGLE ────────────────────────────────── */
+function toggleRowLang() {
+  if (!activeRid) {
+    alert('Click on any cell in a row first, then press this button to change its height.');
+    return;
+  }
+  const row = document.getElementById(`row_${activeRid}`);
+  if (!row) return;
+
+  const wasUrdu = row.classList.contains('row-ur');
+  // Cycle: default/en → ur → en → ur …
+  // If currently Urdu → switch to English; otherwise → switch to Urdu
+  row.classList.toggle('row-ur', !wasUrdu);
+  row.classList.toggle('row-en',  wasUrdu);
+
+  // Sync Urdu font/direction on title & author cells
+  applyUrduStyle(activeRid, !wasUrdu);
+  updateLangToggle();
+}
+
+function updateLangToggle() {
+  const btn = document.getElementById('langToggle');
+  if (!btn) return;
+  if (!activeRid) {
+    btn.textContent  = '🌐 EN / اردو';
+    btn.style.background = '#2a5a3a';
+    return;
+  }
+  const row    = document.getElementById(`row_${activeRid}`);
+  const isUrdu = row?.classList.contains('row-ur');
+  btn.textContent      = isUrdu ? '🌐 اردو  →  EN' : '🌐 EN  →  اردو';
+  btn.style.background = isUrdu ? '#5a2a8a' : '#1a5a2a';
+}
+
+function applyUrduStyle(rid, isUrdu) {
+  const tCell = document.getElementById(`tcell_${rid}`);
+  const aCell = document.getElementById(`acell_${rid}`);
+  const tInp  = document.getElementById(`t_${rid}`);
+  const aInp  = document.getElementById(`a_${rid}`);
+  [tCell, aCell, tInp, aInp].forEach(el => {
+    if (!el) return;
+    el.classList.toggle('urdu', isUrdu);
+  });
+}
+
+/* ── URDU AUTO-DETECT ───────────────────────────────── */
+function onTitle(rid, inp) {
+  const isUrdu = /[؀-ۿﭐ-﷿ﹰ-﻿]/.test(inp.value);
+  applyUrduStyle(rid, isUrdu);
+  // Also auto-set the row height class to match
+  const row = document.getElementById(`row_${rid}`);
+  if (row) {
+    row.classList.toggle('row-ur', isUrdu);
+    row.classList.toggle('row-en', !isUrdu);
+  }
+  if (rid === activeRid) updateLangToggle();
+}
+
+/* ── HELPERS ────────────────────────────────────────── */
+function setCell(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = val ? fmt(val) : '';
+}
+function fmt(n)  { return Number(n).toLocaleString('en-PK'); }
+function fmtDate(v) {
+  if (!v) return '';
+  const [y, m, d] = v.split('-');
+  return `${d}-${m}-${y}`;
+}
+function esc(s) {
+  return String(s || '')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
+</body>
+</html>
