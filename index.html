@@ -4,12 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Asad Book Agency – Bill Generator</title>
+
+<!-- Noto Nastaliq Urdu — for all Urdu text -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 /* ── RESET ────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── BASE FONTS ───────────────────────────────────── */
+/* Bill content → Times New Roman.  Urdu cells → Noto Nastaliq Urdu.
+   Toolbar (UI chrome) stays as system sans-serif for clarity.        */
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 /* ── TOOLBAR (screen only, never printed) ─────────── */
 .toolbar {
+  font-family: Arial, 'Segoe UI', sans-serif; /* override to sans for UI */
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 999;
@@ -90,19 +104,19 @@ body { background: #7a7a7a; padding-top: 58px; }
 
 /* ── HEADER / FOOTER IMAGES ───────────────────────── */
 .bill-header-img {
-  width: 97%;
-  height: 16%;
-  padding-left: 3%;
-  padding-top: 2%;
+  width: 95.2%;
+  height: 17%;
+  padding-left: 4.7%;
+  padding-top: 3.4%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .bill-footer-img {
-  width: 97%;
+  width: 95.2%;
   height: 5%;
-  padding-left: 3%;
+  padding-left: 4.7%;
   padding-bottom: 1%;
   display: flex;
   align-items: center;
@@ -112,6 +126,7 @@ body { background: #7a7a7a; padding-top: 58px; }
 /* ── BILL BODY (between images) ───────────────────── */
 .bill-body {
   flex: 1;
+  max-height: 76%;
   display: flex;
   flex-direction: column;
   padding: 2mm 6mm 1mm 6mm;
@@ -120,12 +135,15 @@ body { background: #7a7a7a; padding-top: 58px; }
 
 /* ── NAME / DATE ROW ──────────────────────────────── */
 .name-date-row {
+  width: 96%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  font-size: 9pt;
+  font-size: 11.5pt;
   font-weight: bold;
-  padding-bottom: 1.5mm;
+  font-family: 'Times New Roman', Times, serif;
+  padding-bottom: 0.5mm;
   margin-bottom: 1mm;
 }
 .nd-name-wrap { display: flex; align-items: baseline; gap: 3px; }
@@ -136,7 +154,7 @@ body { background: #7a7a7a; padding-top: 58px; }
   border: none;
   border-bottom: 1px solid #bbb;
   outline: none;
-  font-size: 9pt;
+  font-size: 11.5pt;
   font-weight: bold;
   font-family: inherit;
   background: transparent;
@@ -149,31 +167,40 @@ body { background: #7a7a7a; padding-top: 58px; }
 
 /* ── NTN ROW ──────────────────────────────────────── */
 .ntn-row {
-  font-size: 8.5pt;
+  width: 96%;
+  margin: 0 auto;
+  font-size: 11.5pt;
   font-weight: bold;
-  margin-bottom: 1.5mm;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 0.3mm;
 }
 
 /* ── BILL TABLE ───────────────────────────────────── */
 .bill-table {
-  width: 100%;
+  width: 96%;
+  margin: 0 auto;
   border-collapse: collapse;
   table-layout: fixed;
   flex: 1;
+  font-family: 'Times New Roman', Times, serif;
 }
 .bill-table th, .bill-table td {
-  border: 1px solid #111;
+  border: 1.4px solid #111;
   padding: 0 3px;
   vertical-align: middle;
-  height: 6mm;
+  height: 5mm;
+  max-height: 5mm;
+  overflow: hidden;
+  font-family: 'Times New Roman', Times, serif;
 }
 .bill-table thead th {
-  font-size: 8pt;
+  font-size: 11.5pt;
   font-weight: bold;
   text-align: center;
   background: #fff;
   line-height: 1.2;
   height: 9mm;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* Column widths */
@@ -187,33 +214,55 @@ body { background: #7a7a7a; padding-top: 58px; }
 .col-amt    { width: 15%; }
 
 /* Data cells */
-.bill-table td.sr-td    { text-align: center; font-weight: bold; font-size: 8pt; }
-.bill-table td.title-td { text-align: left;   font-size: 7.8pt; padding-left: 4px; }
-.bill-table td.auth-td  { text-align: left;   font-size: 7.8pt; padding-left: 3px; }
-.bill-table td.qty-td   { text-align: center; font-size: 7.8pt; }
-.bill-table td.num-td   { text-align: right;  font-size: 7.8pt; padding-right: 4px; }
-.bill-table td.calc-td  { text-align: right;  font-size: 7.8pt; padding-right: 4px; color: #111; }
+.bill-table td.sr-td    { text-align: center; font-weight: bold; font-size: 11.5pt; }
+.bill-table td.title-td { text-align: left;   font-size: 11.5pt; padding-left: 4px; }
+.bill-table td.auth-td  { text-align: left;   font-size: 11.5pt; padding-left: 3px; }
+.bill-table td.qty-td   { text-align: center; font-size: 11.5pt; }
+.bill-table td.num-td   { text-align: right;  font-size: 11.5pt; padding-right: 4px; }
+.bill-table td.calc-td  { text-align: right;  font-size: 11.5pt; padding-right: 4px; color: #111; }
 
-/* Urdu cell */
+/* Urdu cell — Noto Nastaliq Urdu loaded via Google Fonts.
+   !important needed because .bill-table td is more specific.          */
 .urdu {
-  direction: rtl;
+  direction: rtl !important;
   font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq',
-               'Traditional Arabic', 'Arial Unicode MS', Arial, serif;
+               'Traditional Arabic', serif !important;
   text-align: right !important;
-  font-size: 8pt !important;
+  font-size: 8.5pt !important;
+  line-height: 1 !important;
 }
 
 /* ── ROW HEIGHT BY LANGUAGE ───────────────────────── */
-/* Default rows keep the base height set on th/td above */
-.bill-table tr.row-ur td { height: 8mm !important; }   /* Urdu — taller for Nastaliq */
+.bill-table tr.row-ur td { height: 5mm !important; max-height: 5mm !important; overflow: hidden !important; }
 
-/* Active-row highlight (screen only, not printed) */
+/* Active-row highlight (screen only) */
 .bill-table tr.row-active td { background: #fffbe6 !important; }
 @media print { .bill-table tr.row-active td { background: transparent !important; } }
 
+/* ── PER-ROW DISCOUNT INPUT ───────────────────────── */
+.disc-td { position: relative; text-align: right; padding-right: 4px; }
+.disc-pct-inp {
+  display: none;
+  position: absolute;
+  top: 1px; left: 1px;
+  width: 30px;
+  font-size: 5.2pt;
+  border: none;
+  border-bottom: 1px dashed #bbb;
+  background: #fffff0;
+  color: #777;
+  text-align: center;
+  padding: 0 1px;
+  outline: none;
+  z-index: 1;
+}
+.disc-pct-inp::placeholder { color: #bbb; }
+tr.row-active .disc-pct-inp { display: block; }
+@media print { .disc-pct-inp { display: none !important; } }
+
 /* Total / B-F rows */
-.total-row td { font-weight: bold; background: #f5f5f5; font-size: 8pt; }
-.bf-row    td { font-weight: bold; background: #eef2ff; font-size: 8pt; }
+.total-row td { font-weight: bold; background: #f5f5f5; font-size: 11.5pt; }
+.bf-row    td { font-weight: bold; background: #eef2ff; font-size: 11.5pt; }
 .total-row td.lbl-td, .bf-row td.lbl-td {
   text-align: right;
   padding-right: 6px;
@@ -234,8 +283,8 @@ body { background: #7a7a7a; padding-top: 58px; }
   border: none;
   outline: none;
   background: transparent;
-  font-family: inherit;
-  font-size: 7.8pt;
+  font-family: inherit; /* inherits Times New Roman from td, or Nastaliq from .urdu td */
+  font-size: 11.5pt;
   color: #111;
   padding: 0;
 }
@@ -314,7 +363,8 @@ input[type="number"] { -moz-appearance: textfield; }
 
   <label>Disc %:
     <input type="number" id="inp_disc" value="20" min="0" max="100" step="0.5"
-           oninput="recalcAll()">
+           oninput="applyGlobalDisc()"
+           title="Changing this clears all per-row discount overrides and applies this % to every row">
   </label>
 
   <div class="divider"></div>
@@ -323,6 +373,12 @@ input[type="number"] { -moz-appearance: textfield; }
           style="background:#2a5a3a;color:#fff;min-width:120px">
     🌐 EN / اردو
   </button>
+  <button class="tbtn" style="background:#2255aa;color:#fff;font-size:13px;padding:7px 16px"
+          onclick="document.getElementById('jsonInput').click()"
+          title='Auto-fill entire bill from a JSON file.&#10;&#10;Format:&#10;{&#10;  "name": "Customer Name",&#10;  "date": "2026-05-19",&#10;  "ntn": "44358920",&#10;  "discount": 20,&#10;  "items": [&#10;    { "title": "Book Title", "author": "Author", "qty": 1, "rate": 500, "lang": "en", "disc": 15 }&#10;  ]&#10;}&#10;&#10;lang: "en" or "ur"  |  disc: row-level % (optional)&#10;See test.json for a full sample.'>
+    📂 Import JSON &nbsp;<span style="font-size:10px;opacity:.75">(?)</span>
+  </button>
+  <input type="file" id="jsonInput" accept=".json" style="display:none" onchange="importJSON(event)">
   <div class="divider"></div>
   <button class="tbtn tbtn-add"   onclick="addPage()">＋ Add Page</button>
   <button class="tbtn tbtn-del"   onclick="removeLastPage()">− Remove Last Page</button>
@@ -498,7 +554,14 @@ function makeTable(pn, isFirst) {
                oninput="calcRow('${rid}')">
       </td>
       <td class="calc-td" id="tp_${rid}"></td>
-      <td class="calc-td" id="dc_${rid}"></td>
+      <td class="calc-td disc-td" id="dctd_${rid}">
+        <input class="disc-pct-inp" id="dp_${rid}" type="number" min="0" max="100"
+               placeholder="${document.getElementById('inp_disc').value}"
+               onfocus="setActiveRow('${rid}')"
+               oninput="calcRow('${rid}')"
+               title="Custom discount % — leave empty to use default">
+        <span id="dc_${rid}"></span>
+      </td>
       <td class="calc-td" id="am_${rid}"></td>`;
     tbody.appendChild(tr);
   }
@@ -544,9 +607,16 @@ function syncGlobal() {
   }
 }
 
+/* ── PER-ROW DISCOUNT HELPER ────────────────────────── */
+function getRowDisc(rid) {
+  const el = document.getElementById(`dp_${rid}`);
+  if (el && el.value.trim() !== '') return +el.value / 100;
+  return +document.getElementById('inp_disc').value / 100;
+}
+
 /* ── RECALC SINGLE ROW ──────────────────────────────── */
 function calcRow(rid) {
-  const disc = +document.getElementById('inp_disc').value / 100;
+  const disc = getRowDisc(rid);
   const q    = +document.getElementById(`q_${rid}`)?.value || 0;
   const r    = +document.getElementById(`r_${rid}`)?.value || 0;
   const tp   = q * r;
@@ -558,18 +628,30 @@ function calcRow(rid) {
   calcPageTotals(parseInt(rid.split('_')[0]));
 }
 
+/* ── APPLY GLOBAL DISC (clears all per-row overrides) ── */
+function applyGlobalDisc() {
+  // Wipe every per-row override so the new global value applies everywhere
+  for (let p = 1; p <= totalPages; p++) {
+    for (let i = 0; i < ROWS; i++) {
+      const el = document.getElementById(`dp_${p}_${i}`);
+      if (el) el.value = '';
+    }
+  }
+  recalcAll();
+}
+
 /* ── RECALC ALL ROWS ────────────────────────────────── */
 function recalcAll() {
-  const disc = +document.getElementById('inp_disc').value / 100;
   for (let p = 1; p <= totalPages; p++) {
     for (let i = 0; i < ROWS; i++) {
       const rid = `${p}_${i}`;
       if (!document.getElementById(`q_${rid}`)) continue;
-      const q  = +document.getElementById(`q_${rid}`).value || 0;
-      const r  = +document.getElementById(`r_${rid}`).value || 0;
-      const tp = q * r;
-      const d  = Math.round(tp * disc);
-      const am = tp - d;
+      const q    = +document.getElementById(`q_${rid}`).value || 0;
+      const r    = +document.getElementById(`r_${rid}`).value || 0;
+      const disc = getRowDisc(rid);
+      const tp   = q * r;
+      const d    = Math.round(tp * disc);
+      const am   = tp - d;
       setCell(`tp_${rid}`, tp);
       setCell(`dc_${rid}`, d);
       setCell(`am_${rid}`, am);
@@ -580,37 +662,27 @@ function recalcAll() {
 
 /* ── CALC PAGE TOTALS / B-F / C-F ───────────────────── */
 function calcPageTotals(pn) {
-  const disc = +document.getElementById('inp_disc').value / 100;
-
-  // Accumulate running total up to (not including) this page
   let running = 0;
   for (let p = 1; p < pn; p++) {
     for (let i = 0; i < ROWS; i++) {
-      const q = +document.getElementById(`q_${p}_${i}`)?.value || 0;
-      const r = +document.getElementById(`r_${p}_${i}`)?.value || 0;
-      running += Math.round(q * r * (1 - disc));
+      const rid = `${p}_${i}`;
+      const q = +document.getElementById(`q_${rid}`)?.value || 0;
+      const r = +document.getElementById(`r_${rid}`)?.value || 0;
+      running += Math.round(q * r * (1 - getRowDisc(rid)));
     }
   }
-
-  // This page's items
   let pageSum = 0;
   for (let i = 0; i < ROWS; i++) {
-    const q = +document.getElementById(`q_${pn}_${i}`)?.value || 0;
-    const r = +document.getElementById(`r_${pn}_${i}`)?.value || 0;
-    pageSum += Math.round(q * r * (1 - disc));
+    const rid = `${pn}_${i}`;
+    const q = +document.getElementById(`q_${rid}`)?.value || 0;
+    const r = +document.getElementById(`r_${rid}`)?.value || 0;
+    pageSum += Math.round(q * r * (1 - getRowDisc(rid)));
   }
-
   const cfTotal = running + pageSum;
-
-  // Update B/F for this page (= running from previous pages)
-  const bfEl = document.getElementById(`bf_amt${pn}`);
-  if (bfEl) bfEl.innerHTML = `<b>${fmt(running)}</b>`;
-
-  // Update this page's total
+  const bfEl  = document.getElementById(`bf_amt${pn}`);
+  if (bfEl)  bfEl.innerHTML  = `<b>${fmt(running)}</b>`;
   const totEl = document.getElementById(`tot_amt${pn}`);
   if (totEl) totEl.innerHTML = `<b>${fmt(cfTotal)}</b>`;
-
-  // Cascade: recalc next pages' B/F
   if (document.getElementById(`page${pn + 1}`)) calcPageTotals(pn + 1);
 }
 
@@ -696,6 +768,70 @@ function onTitle(rid, inp) {
     row.classList.toggle('row-en', !isUrdu);
   }
   if (rid === activeRid) updateLangToggle();
+}
+
+/* ── IMPORT JSON ────────────────────────────────────── */
+function importJSON(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      loadBillFromData(JSON.parse(e.target.result));
+    } catch(err) {
+      alert('Invalid JSON: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = ''; // allow re-importing same file
+}
+
+function loadBillFromData(data) {
+  // Global fields
+  if (data.name)                document.getElementById('inp_name').value = data.name;
+  if (data.date)                document.getElementById('inp_date').value = data.date;
+  if (data.ntn)                 document.getElementById('inp_ntn').value  = data.ntn;
+  if (data.discount != null)    document.getElementById('inp_disc').value = data.discount;
+
+  const items = Array.isArray(data.items) ? data.items : [];
+  const pagesNeeded = Math.max(1, Math.ceil(items.length / ROWS));
+
+  // Remove all pages then rebuild
+  while (totalPages > 0) {
+    document.getElementById(`page${totalPages}`)?.remove();
+    totalPages--;
+  }
+  for (let p = 0; p < pagesNeeded; p++) addPage();
+
+  // Fill rows
+  items.forEach((item, idx) => {
+    const pn  = Math.floor(idx / ROWS) + 1;
+    const i   = idx % ROWS;
+    const rid = `${pn}_${i}`;
+
+    const tEl = document.getElementById(`t_${rid}`);
+    const aEl = document.getElementById(`a_${rid}`);
+    const qEl = document.getElementById(`q_${rid}`);
+    const rEl = document.getElementById(`r_${rid}`);
+    const dEl = document.getElementById(`dp_${rid}`);
+
+    if (tEl && item.title  != null) { tEl.value = item.title;  onTitle(rid, tEl); }
+    if (aEl && item.author != null)   aEl.value = item.author;
+    if (qEl && item.qty    != null)   qEl.value = item.qty;
+    if (rEl && item.rate   != null)   rEl.value = item.rate;
+    if (dEl && item.disc   != null)   dEl.value = item.disc;  // per-row override
+
+    // Manual lang override — 'ur' (Urdu) and 'pa' (Punjabi) both use Nastaliq + 8mm
+    if (item.lang === 'ur' || item.lang === 'pa') {
+      const row = document.getElementById(`row_${rid}`);
+      if (row) { row.classList.add('row-ur'); row.classList.remove('row-en'); }
+      applyUrduStyle(rid, true);
+    }
+    calcRow(rid);
+  });
+
+  syncGlobal();
+  updateTotalLabels();
 }
 
 /* ── HELPERS ────────────────────────────────────────── */
