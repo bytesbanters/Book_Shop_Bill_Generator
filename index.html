@@ -104,23 +104,19 @@ body { background: #7a7a7a; padding-top: 58px; }
 
 /* ── HEADER / FOOTER IMAGES ───────────────────────── */
 .bill-header-img {
-  width: 95.2%;
-  height: 17%;
-  padding-left: 4.7%;
-  padding-top: 3.4%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 95.3%;
+    height: 13.7%;
+    padding-left: 4.7%;
+    position: absolute;
+    top: 20px;
 }
 
 .bill-footer-img {
-  width: 95.2%;
+  width: 95.3%;
   height: 5%;
   padding-left: 4.7%;
-  padding-bottom: 1%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  bottom: 15px;
 }
 
 /* ── BILL BODY (between images) ───────────────────── */
@@ -129,7 +125,7 @@ body { background: #7a7a7a; padding-top: 58px; }
   max-height: 76%;
   display: flex;
   flex-direction: column;
-  padding: 2mm 6mm 1mm 6mm;
+  padding: 47mm 6mm 1mm 6mm;
   min-height: 0;
 }
 
@@ -369,9 +365,9 @@ input[type="number"] { -moz-appearance: textfield; }
 
   <div class="divider"></div>
   <button class="tbtn" id="langToggle" onclick="toggleRowLang()"
-          title="Click a row first, then press this to switch its height between English (short) and Urdu (tall)"
-          style="background:#2a5a3a;color:#fff;min-width:120px">
-    🌐 EN / اردو
+          title="Click a row first, then use this button to toggle its language (also switches keyboard)"
+          style="background:#2a5a3a;color:#fff;min-width:155px">
+    ⌨ EN / اردو
   </button>
   <button class="tbtn" style="background:#2255aa;color:#fff;font-size:13px;padding:7px 16px"
           onclick="document.getElementById('jsonInput').click()"
@@ -407,6 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('inp_date').value =
     `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
   addPage();
+  updateLangToggle();
 });
 
 /* ── ADD PAGE ───────────────────────────────────────── */
@@ -736,14 +733,22 @@ function updateLangToggle() {
   const btn = document.getElementById('langToggle');
   if (!btn) return;
   if (!activeRid) {
-    btn.textContent  = '🌐 EN / اردو';
+    btn.innerHTML        = '⌨&nbsp; EN &nbsp;/&nbsp; اردو';
     btn.style.background = '#2a5a3a';
+    btn.title            = 'Click any row first, then use this button to toggle its language';
     return;
   }
   const row    = document.getElementById(`row_${activeRid}`);
   const isUrdu = row?.classList.contains('row-ur');
-  btn.textContent      = isUrdu ? '🌐 اردو  →  EN' : '🌐 EN  →  اردو';
-  btn.style.background = isUrdu ? '#5a2a8a' : '#1a5a2a';
+  if (isUrdu) {
+    btn.innerHTML        = '<span style="background:#ffdd55;color:#222;padding:1px 7px;border-radius:3px;font-weight:900">اردو</span>';
+    btn.style.background = '#5a2a8a';
+    btn.title            = 'Urdu keyboard active — typing produces Urdu letters. Click to switch to English.';
+  } else {
+    btn.innerHTML        = '<span style="background:#55ffaa;color:#111;padding:1px 7px;border-radius:3px;font-weight:900">ENG</span>';
+    btn.style.background = '#1a5a2a';
+    btn.title            = 'English keyboard active. Click to switch to Urdu.';
+  }
 }
 
 function applyUrduStyle(rid, isUrdu) {
@@ -832,6 +837,47 @@ function loadBillFromData(data) {
 
   syncGlobal();
   updateTotalLabels();
+}
+
+/* ── URDU PHONETIC KEYBOARD ─────────────────────────── */
+// Each entry: [plain-key char, Shift+key char (null = same as plain)]
+const URDU_MAP = {
+  a:['ا','آ'], b:['ب',null],  p:['پ',null],  t:['ت','ٹ'],
+  s:['س','ش'], j:['ج',null],  h:['ہ','ح'],   k:['ک','خ'],
+  d:['د','ڈ'], r:['ر','ڑ'],   z:['ز','ذ'],   g:['گ','غ'],
+  f:['ف',null], q:['ق',null], m:['م',null],  n:['ن','ں'],
+  w:['و','ؤ'], y:['ی','ے'],   e:['ع','ء'],   l:['ل',null],
+  x:['خ',null], c:['چ',null], i:['ئ',null],  o:['۔','؟'],
+};
+
+// Intercept keystrokes when the focused input belongs to a row-ur row
+document.addEventListener('keydown', function(ev) {
+  // Ignore Ctrl / Meta / Alt combos (copy, paste, undo, browser shortcuts, etc.)
+  if (ev.ctrlKey || ev.metaKey || ev.altKey) return;
+  const el = document.activeElement;
+  if (!el || !el.id) return;
+  // Only Title (t_) and Author (a_) inputs
+  if (!el.id.startsWith('t_') && !el.id.startsWith('a_')) return;
+  // Derive rid: 't_1_0' → '1_0'
+  const rid = el.id.slice(2);
+  const row = document.getElementById('row_' + rid);
+  if (!row || !row.classList.contains('row-ur')) return;
+  // Only single printable characters
+  if (ev.key.length !== 1) return;
+  const map = URDU_MAP[ev.key.toLowerCase()];
+  if (!map) return;
+  const ch = ev.shiftKey ? (map[1] || map[0]) : map[0];
+  ev.preventDefault();
+  insertAtCursor(el, ch);
+}, true); // capture phase so we always see the event first
+
+function insertAtCursor(inp, text) {
+  const s = inp.selectionStart;
+  const e = inp.selectionEnd;
+  inp.value = inp.value.slice(0, s) + text + inp.value.slice(e);
+  inp.selectionStart = inp.selectionEnd = s + text.length;
+  // Fire oninput so auto-detect / calc stays in sync
+  inp.dispatchEvent(new Event('input', { bubbles: true }));
 }
 
 /* ── HELPERS ────────────────────────────────────────── */

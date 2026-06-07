@@ -1,0 +1,11 @@
+{
+  "name": "Govt graduate college for women 266/R.B khurrianwala fsd",
+  "date": "2026-05-19",
+  "ntn": "44358920",
+  "discount": 20,
+  "items": [
+    { "title": "کلیات فیض", "author": "فیض احمد فیض", "qty": 1, "rate": 1800, "lang": "ur" },
+    { "title": "ارسطو سے الیٹ تک", "author": "جمیل جالبی", "qty": 1, "rate": 1600, "lang": "ur" },
+    { "title": "انگریزی ادب کی تاریخ", "author": "ڈاکٹر احسن فاروقی", "qty": 1, "rate": 1400, "lang": "ur" }
+  ]
+}

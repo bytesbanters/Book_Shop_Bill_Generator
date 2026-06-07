@@ -1,0 +1,27 @@
+{
+  "name": "Govt-Millat Graduate College GM Abad, FSD",
+  "date": "2026-06-03",
+  "ntn": "",
+  "discount": 15,
+  "items": [
+    { "title": "College Biology 1st Year", "author": "", "qty": 2, "rate": 825, "lang": "en" },
+    { "title": "IT Series Computer Studies 1st Year", "author": "", "qty": 2, "rate": 475, "lang": "en" },
+    { "title": "اداس آنکھوں سے مسکرانا", "author": "", "qty": 3, "rate": 3000, "lang": "ur" },
+    { "title": "اسرارِ خودی", "author": "", "qty": 3, "rate": 800, "lang": "ur" },
+    { "title": "جنت کے پتے", "author": "", "qty": 1, "rate": 3000, "lang": "ur" },
+    { "title": "آگ کا دریا", "author": "", "qty": 1, "rate": 3000, "lang": "ur" },
+    { "title": "Little Women", "author": "", "qty": 1, "rate": 800, "lang": "en" },
+    { "title": "Set Lord of the Rings", "author": "", "qty": 1, "rate": 4500, "lang": "en" },
+    { "title": "Organic Chemistry", "author": "B.S. Bahl", "qty": 2, "rate": 2995, "lang": "en" },
+    { "title": "College Chemistry 1st Year", "author": "", "qty": 2, "rate": 825, "lang": "en" },
+    { "title": "جنت کی تلاش", "author": "رحیم گل", "qty": 1, "rate": 2000, "lang": "ur" },
+    { "title": "سیرۃ ابن اسحاق", "author": "", "qty": 1, "rate": 3000, "lang": "ur" },
+    { "title": "Organic Chemistry 9/E (PB)", "author": "Wade", "qty": 1, "rate": 5739, "lang": "en" },
+    { "title": "The Art of Being Alone", "author": "Renuka Gavarani", "qty": 2, "rate": 495, "lang": "en" },
+    { "title": "Atomic Habit", "author": "James Clear", "qty": 2, "rate": 1295, "lang": "en" },
+    { "title": "it Ends With Us", "author": "Colleen Hoover", "qty": 2, "rate": 995, "lang": "en" },
+    { "title": "Think and Grow Rich", "author": "Napolean Hill", "qty": 1, "rate": 1195, "lang": "en" },
+    { "title": "The Power of Descipline", "author": "Daniel Walter", "qty": 1, "rate": 495, "lang": "en" },
+    { "title": "The power of Your Sub-Con", "author": "Dr. Joseph Mur", "qty": 2, "rate": 995, "lang": "en" }
+  ]
+}
