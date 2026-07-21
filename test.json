@@ -1,27 +1,55 @@
 {
-  "name": "Govt. Associate College (W) Miranwala Banglow, Fsd.",
-  "date": "2026-05-19",
+  "name": "Sample School / Institute",
+  "date": "2026-07-21",
   "ntn": "44358920",
   "discount": 20,
+  "settings": {
+    "titleWidth": 20,
+    "authorWidth": 20,
+    "titleFontSize": 11.5,
+    "authorFontSize": 11.5,
+    "mathFontSize": 11.5,
+    "titleDoubleChars": 30,
+    "authorDoubleChars": 30,
+    "pageCount": 2
+  },
   "items": [
-    { "title": "Hallidays Fundamentals of Physics", "author": "Walker",          "qty": 1, "rate": 22240, "lang": "en" },
-    { "title": "Engineering Mathematics 3/E (PB)",  "author": "Stroud",          "qty": 1, "rate": 5882,  "lang": "en" },
-    { "title": "Organic Chemistry 9/E (PB)",        "author": "Wade",            "qty": 1, "rate": 5739,  "lang": "en" },
-    { "title": "Atomic Habits",                     "author": "James Clear",     "qty": 2, "rate": 1295,  "lang": "en" },
-    { "title": "Think and Grow Rich",               "author": "Napoleon Hill",   "qty": 1, "rate": 1195,  "lang": "en" },
-    { "title": "The Power of Your Subconscious",    "author": "Dr. Joseph Murphy","qty": 1, "rate": 995,   "lang": "en" },
-    { "title": "Pride and Prejudice",               "author": "Jane Austen",     "qty": 2, "rate": 800,   "lang": "en" },
-    { "title": "Python Machine Learning",           "author": "Sebastian Raschka","qty": 1, "rate": 4502,  "lang": "en", "disc": 15 },
-    { "title": "Introduction to Artificial Intelligence", "author": "",          "qty": 1, "rate": 5726,  "lang": "en" },
-    { "title": "نمل",                              "author": "نمرہ احمد",        "qty": 1, "rate": 6000,  "lang": "ur" },
-    { "title": "من چلے کا سودا",                   "author": "اشفاق احمد",      "qty": 2, "rate": 1400,  "lang": "ur" },
-    { "title": "پیر کامل",                         "author": "عمیرہ احمد",      "qty": 1, "rate": 1600,  "lang": "ur" },
-    { "title": "آسان ترجمہ قرآن (مختصر تفسیر کے ساتھ)", "author": "ڈاکٹر اسرار احمد", "qty": 1, "rate": 2600, "lang": "ur" },
-    { "title": "جنت کے پتے",                       "author": "نمرہ احمد",        "qty": 1, "rate": 3000,  "lang": "ur" },
-    { "title": "تلاش",                             "author": "ممتاز مفتی",       "qty": 1, "rate": 650,   "lang": "ur" },
-    { "title": "لازوال تقریریں",                   "author": "لیس سروہی",        "qty": 1, "rate": 400,   "lang": "ur" }
+    {
+      "title": "Short English Title",
+      "author": "Short Author",
+      "qty": 2,
+      "rate": 500,
+      "lang": "en"
+    },
+    {
+      "title": "A Long English Book Title That Exceeds Thirty Characters",
+      "author": "Author Name",
+      "qty": 1,
+      "rate": 1250,
+      "lang": "en",
+      "disc": 15
+    },
+    {
+      "title": "Author Threshold Demonstration",
+      "author": "A Very Long Author Name That Exceeds Thirty Characters",
+      "qty": 3,
+      "rate": 800,
+      "lang": "en"
+    },
+    {
+      "title": "فیضان سنت",
+      "author": "علامہ مولانا محمد الیاس عطار قادری",
+      "qty": 1,
+      "rate": 4000,
+      "lang": "ur",
+      "disc": 10
+    },
+    {
+      "title": "پنجابی کتاب دا نمونہ",
+      "author": "نمونہ مصنف",
+      "qty": 4,
+      "rate": 350,
+      "lang": "pa"
+    }
   ]
 }
-
-
-// this is the format i want

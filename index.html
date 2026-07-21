@@ -13,10 +13,11 @@
 <style>
 /* ── CSS VARIABLES ────────────────────────────────── */
 :root {
-  --col-title-w:  30%;
-  --col-author-w: 15%;
+  --col-title-w:  20%;
+  --col-author-w: 20%;
   --en-title-fs:  11.5pt;
   --en-auth-fs:   11.5pt;
+  --math-fs:      11.5pt;
 }
 
 /* ── RESET ────────────────────────────────────────── */
@@ -215,15 +216,15 @@ body { background: #7a7a7a; padding-top: 58px; }
 .col-rate   { width: 10%; }
 .col-tp     { width: 10%; }
 .col-disc   { width: 9%;  }
-.col-amt    { width: 15%; }
+.col-amt    { width: 20%; }
 
 /* Data cells */
-.bill-table td.sr-td    { text-align: center; font-weight: bold; font-size: 11.5pt; }
+.bill-table td.sr-td    { text-align: center; font-weight: bold; font-size: var(--math-fs); }
 .bill-table td.title-td { text-align: left;   font-size: var(--en-title-fs); padding-left: 4px; }
 .bill-table td.auth-td  { text-align: left;   font-size: var(--en-auth-fs);  padding-left: 3px; }
-.bill-table td.qty-td   { text-align: center; font-size: 11.5pt; }
-.bill-table td.num-td   { text-align: right;  font-size: 11.5pt; padding-right: 4px; }
-.bill-table td.calc-td  { text-align: right;  font-size: 11.5pt; padding-right: 4px; color: #111; }
+.bill-table td.qty-td   { text-align: center; font-size: var(--math-fs); }
+.bill-table td.num-td   { text-align: right;  font-size: var(--math-fs); padding-right: 4px; }
+.bill-table td.calc-td  { text-align: right;  font-size: var(--math-fs); padding-right: 4px; color: #111; }
 
 /* Urdu cell — Noto Nastaliq Urdu loaded via Google Fonts.
    !important needed because .bill-table td is more specific.          */
@@ -238,6 +239,11 @@ body { background: #7a7a7a; padding-top: 58px; }
 
 /* ── ROW HEIGHT BY LANGUAGE ───────────────────────── */
 .bill-table tr.row-ur td { height: 5mm !important; max-height: 5mm !important; overflow: hidden !important; }
+.bill-table tr.row-double td {
+  height: 10mm !important;
+  max-height: 10mm !important;
+  overflow: hidden !important;
+}
 
 /* Active-row highlight (screen only) */
 .bill-table tr.row-active td { background: #fffbe6 !important; }
@@ -265,8 +271,8 @@ tr.row-active .disc-pct-inp { display: block; }
 @media print { .disc-pct-inp { display: none !important; } }
 
 /* Total / B-F rows */
-.total-row td { font-weight: bold; background: #f5f5f5; font-size: 11.5pt; }
-.bf-row    td { font-weight: bold; background: #eef2ff; font-size: 11.5pt; }
+.total-row td { font-weight: bold; background: #f5f5f5; font-size: var(--math-fs); }
+.bf-row    td { font-weight: bold; background: #eef2ff; font-size: var(--math-fs); }
 .total-row td.lbl-td, .bf-row td.lbl-td {
   text-align: right;
   padding-right: 6px;
@@ -288,7 +294,7 @@ tr.row-active .disc-pct-inp { display: block; }
   outline: none;
   background: transparent;
   font-family: inherit; /* inherits Times New Roman from td, or Nastaliq from .urdu td */
-  font-size: 11.5pt;
+  font-size: var(--math-fs);
   color: #111;
   padding: 0;
 }
@@ -296,6 +302,12 @@ tr.row-active .disc-pct-inp { display: block; }
 .cell-input.auth-inp   { text-align: left;                      font-size: var(--en-auth-fs);  }
 .cell-input.qty-inp    { text-align: center; }
 .cell-input.rate-inp   { text-align: right;  padding-right: 2px; }
+textarea.cell-input {
+  display: block;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.15;
+}
 /* Remove number arrows */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
@@ -393,12 +405,12 @@ input[type="number"] { -moz-appearance: textfield; }
   </button>
   <div class="divider"></div>
   <label title="Title column width %">Title W:
-    <input type="number" id="inp_title_w" value="30" min="5" max="65" step="1"
+    <input type="number" id="inp_title_w" value="20" min="5" max="65" step="1"
            style="width:45px" oninput="setColWidths()">
     <span style="color:#aac;font-size:11px">%</span>
   </label>
   <label title="Author column width %">Auth W:
-    <input type="number" id="inp_auth_w" value="15" min="5" max="40" step="1"
+    <input type="number" id="inp_auth_w" value="20" min="5" max="40" step="1"
            style="width:45px" oninput="setColWidths()">
     <span style="color:#aac;font-size:11px">%</span>
   </label>
@@ -411,6 +423,21 @@ input[type="number"] { -moz-appearance: textfield; }
     <input type="number" id="inp_auth_fs" value="11.5" min="6" max="18" step="0.5"
            style="width:48px" oninput="setFontSizes()">
     <span style="color:#aac;font-size:11px">pt</span>
+  </label>
+  <label title="Font size for serial numbers, quantities, rates, calculations and totals">Math Sz:
+    <input type="number" id="inp_math_fs" value="11.5" min="6" max="18" step="0.5"
+           style="width:48px" oninput="setFontSizes()">
+    <span style="color:#aac;font-size:11px">pt</span>
+  </label>
+  <label title="Double the complete row height when the title exceeds this character count">Title 2×:
+    <input type="number" id="inp_title_chars" value="30" min="1" max="500" step="1"
+           style="width:48px" oninput="updateAllRowHeights()">
+    <span style="color:#aac;font-size:11px">chars</span>
+  </label>
+  <label title="Double the complete row height when the author exceeds this character count">Auth 2×:
+    <input type="number" id="inp_auth_chars" value="30" min="1" max="500" step="1"
+           style="width:48px" oninput="updateAllRowHeights()">
+    <span style="color:#aac;font-size:11px">chars</span>
   </label>
   <div class="divider"></div>
   <button class="tbtn tbtn-add"   onclick="addPage()">＋ Add Page</button>
@@ -561,17 +588,18 @@ function makeTable(pn, isFirst) {
     tr.innerHTML = `
       <td class="sr-td">${sr}</td>
       <td class="title-td" id="tcell_${rid}">
-        <input class="cell-input title-inp" id="t_${rid}"
-               type="text" autocomplete="off"
+        <textarea class="cell-input title-inp" id="t_${rid}"
+               autocomplete="off" rows="1"
                tabindex="${tab+1}"
                onfocus="setActiveRow('${rid}')"
-               oninput="onTitle('${rid}',this)">
+               oninput="onTitle('${rid}',this)"></textarea>
       </td>
       <td class="auth-td" id="acell_${rid}">
-        <input class="cell-input auth-inp" id="a_${rid}"
-               type="text" autocomplete="off"
+        <textarea class="cell-input auth-inp" id="a_${rid}"
+               autocomplete="off" rows="1"
                tabindex="${tab+2}"
-               onfocus="setActiveRow('${rid}')">
+               onfocus="setActiveRow('${rid}')"
+               oninput="updateRowHeight('${rid}')"></textarea>
       </td>
       <td class="qty-td">
         <input class="cell-input qty-inp" id="q_${rid}"
@@ -809,7 +837,29 @@ function onTitle(rid, inp) {
     row.classList.toggle('row-ur', isUrdu);
     row.classList.toggle('row-en', !isUrdu);
   }
+  updateRowHeight(rid);
   if (rid === activeRid) updateLangToggle();
+}
+
+/* ── AUTOMATIC DOUBLE-HEIGHT ROWS ──────────────────── */
+function textLength(value) {
+  return [...String(value || '').trim()].length;
+}
+
+function updateRowHeight(rid) {
+  const row = document.getElementById(`row_${rid}`);
+  if (!row) return;
+  const titleLimit = +document.getElementById('inp_title_chars').value || 30;
+  const authLimit  = +document.getElementById('inp_auth_chars').value  || 30;
+  const titleLen   = textLength(document.getElementById(`t_${rid}`)?.value);
+  const authLen    = textLength(document.getElementById(`a_${rid}`)?.value);
+  row.classList.toggle('row-double', titleLen > titleLimit || authLen > authLimit);
+}
+
+function updateAllRowHeights() {
+  for (let p = 1; p <= totalPages; p++) {
+    for (let i = 0; i < ROWS; i++) updateRowHeight(`${p}_${i}`);
+  }
 }
 
 /* ── IMPORT JSON ────────────────────────────────────── */
@@ -830,13 +880,31 @@ function importJSON(event) {
 
 function loadBillFromData(data) {
   // Global fields
-  if (data.name)                document.getElementById('inp_name').value = data.name;
-  if (data.date)                document.getElementById('inp_date').value = data.date;
-  if (data.ntn)                 document.getElementById('inp_ntn').value  = data.ntn;
+  if (data.name != null)        document.getElementById('inp_name').value = data.name;
+  if (data.date != null)        document.getElementById('inp_date').value = data.date;
+  if (data.ntn != null)         document.getElementById('inp_ntn').value  = data.ntn;
   if (data.discount != null)    document.getElementById('inp_disc').value = data.discount;
 
+  // Layout settings are optional so older JSON files still import normally.
+  const settings = data.settings && typeof data.settings === 'object' ? data.settings : {};
+  const settingInputs = {
+    titleWidth:        'inp_title_w',
+    authorWidth:       'inp_auth_w',
+    titleFontSize:     'inp_title_fs',
+    authorFontSize:    'inp_auth_fs',
+    mathFontSize:      'inp_math_fs',
+    titleDoubleChars:  'inp_title_chars',
+    authorDoubleChars: 'inp_auth_chars'
+  };
+  Object.entries(settingInputs).forEach(([key, id]) => {
+    if (settings[key] != null) document.getElementById(id).value = settings[key];
+  });
+  setColWidths();
+  setFontSizes();
+
   const items = Array.isArray(data.items) ? data.items : [];
-  const pagesNeeded = Math.max(1, Math.ceil(items.length / ROWS));
+  const savedPages = Math.max(0, Math.floor(+settings.pageCount || 0));
+  const pagesNeeded = Math.max(1, savedPages, Math.ceil(items.length / ROWS));
 
   // Remove all pages then rebuild
   while (totalPages > 0) {
@@ -869,10 +937,12 @@ function loadBillFromData(data) {
       if (row) { row.classList.add('row-ur'); row.classList.remove('row-en'); }
       applyUrduStyle(rid, true);
     }
+    updateRowHeight(rid);
     calcRow(rid);
   });
 
   syncGlobal();
+  updateAllRowHeights();
   updateTotalLabels();
 }
 
@@ -919,8 +989,8 @@ function insertAtCursor(inp, text) {
 
 /* ── COLUMN WIDTH & FONT SIZE CONTROLS ─────────────── */
 function setColWidths() {
-  const tw = +document.getElementById('inp_title_w').value || 30;
-  const aw = +document.getElementById('inp_auth_w').value  || 15;
+  const tw = +document.getElementById('inp_title_w').value || 20;
+  const aw = +document.getElementById('inp_auth_w').value  || 20;
   document.documentElement.style.setProperty('--col-title-w',  tw + '%');
   document.documentElement.style.setProperty('--col-author-w', aw + '%');
 }
@@ -928,8 +998,10 @@ function setColWidths() {
 function setFontSizes() {
   const tfs = +document.getElementById('inp_title_fs').value || 11.5;
   const afs = +document.getElementById('inp_auth_fs').value  || 11.5;
+  const mfs = +document.getElementById('inp_math_fs').value  || 11.5;
   document.documentElement.style.setProperty('--en-title-fs', tfs + 'pt');
   document.documentElement.style.setProperty('--en-auth-fs',  afs + 'pt');
+  document.documentElement.style.setProperty('--math-fs',     mfs + 'pt');
 }
 
 /* ── EXPORT JSON ────────────────────────────────────── */
@@ -939,6 +1011,16 @@ function exportJSON() {
     date:     document.getElementById('inp_date').value,
     ntn:      document.getElementById('inp_ntn').value,
     discount: +document.getElementById('inp_disc').value,
+    settings: {
+      titleWidth:        +document.getElementById('inp_title_w').value,
+      authorWidth:       +document.getElementById('inp_auth_w').value,
+      titleFontSize:     +document.getElementById('inp_title_fs').value,
+      authorFontSize:    +document.getElementById('inp_auth_fs').value,
+      mathFontSize:      +document.getElementById('inp_math_fs').value,
+      titleDoubleChars:  +document.getElementById('inp_title_chars').value,
+      authorDoubleChars: +document.getElementById('inp_auth_chars').value,
+      pageCount: totalPages
+    },
     items:    []
   };
 
@@ -981,6 +1063,13 @@ function exportExcel() {
   const date     = document.getElementById('inp_date').value;
   const ntn      = document.getElementById('inp_ntn').value;
   const discount = +document.getElementById('inp_disc').value || 0;
+  const titleWidth = +document.getElementById('inp_title_w').value || 20;
+  const authorWidth = +document.getElementById('inp_auth_w').value || 20;
+  const titleFontSize = +document.getElementById('inp_title_fs').value || 11.5;
+  const authorFontSize = +document.getElementById('inp_auth_fs').value || 11.5;
+  const mathFontSize = +document.getElementById('inp_math_fs').value || 11.5;
+  const titleDoubleChars = +document.getElementById('inp_title_chars').value || 30;
+  const authorDoubleChars = +document.getElementById('inp_auth_chars').value || 30;
   const rows     = [];
   let sr = 1;
   let grandTotal = 0;
@@ -1030,6 +1119,14 @@ function exportExcel() {
   ${row([cell('Date', 'String', 'Label'), cell(date)])}
   ${row([cell('NTN #', 'String', 'Label'), cell(ntn)])}
   ${row([cell('Default Discount %', 'String', 'Label'), cell(discount, 'Number')])}
+  ${row([cell('Title Column Width %', 'String', 'Label'), cell(titleWidth, 'Number')])}
+  ${row([cell('Author Column Width %', 'String', 'Label'), cell(authorWidth, 'Number')])}
+  ${row([cell('Title Font Size pt', 'String', 'Label'), cell(titleFontSize, 'Number')])}
+  ${row([cell('Author Font Size pt', 'String', 'Label'), cell(authorFontSize, 'Number')])}
+  ${row([cell('Math Font Size pt', 'String', 'Label'), cell(mathFontSize, 'Number')])}
+  ${row([cell('Title Double-Height Character Count', 'String', 'Label'), cell(titleDoubleChars, 'Number')])}
+  ${row([cell('Author Double-Height Character Count', 'String', 'Label'), cell(authorDoubleChars, 'Number')])}
+  ${row([cell('Page Count', 'String', 'Label'), cell(totalPages, 'Number')])}
   <Row/>
   ${row(['Sr.', 'Title', 'Author', 'Qty', 'Rate', 'Total Price', 'Discount %', 'Discount', 'Amount'].map(v => cell(v, 'String', 'Header')))}
   ${itemRows}
