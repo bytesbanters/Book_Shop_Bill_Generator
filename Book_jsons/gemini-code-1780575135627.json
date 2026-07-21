@@ -1,0 +1,357 @@
+{
+  "name": "Library Books Order",
+  "date": "2026-06-04",
+  "items": [
+    {
+      "sr_no": 1,
+      "title": "Artificial Intelligence: A Modern Approach (4th Edition)",
+      "pages": 1166,
+      "qty": 5,
+      "total_pages": 5830,
+      "rate_per_page": 6.0,
+      "amount": 34980.0
+    },
+    {
+      "sr_no": 2,
+      "title": "Python Crash Course (3rd Edition)",
+      "pages": 552,
+      "qty": 5,
+      "total_pages": 2760,
+      "rate_per_page": 6.0,
+      "amount": 16560.0
+    },
+    {
+      "sr_no": 3,
+      "title": "Mathematics for Machine Learning",
+      "pages": 398,
+      "qty": 5,
+      "total_pages": 1990,
+      "rate_per_page": 6.0,
+      "amount": 11940.0
+    },
+    {
+      "sr_no": 4,
+      "title": "Introduction to Linear Algebra (6th Edition)",
+      "pages": 615,
+      "qty": 5,
+      "total_pages": 3075,
+      "rate_per_page": 6.0,
+      "amount": 18450.0
+    },
+    {
+      "sr_no": 5,
+      "title": "An Introduction to Statistical Learning: with Applications in Python",
+      "pages": 610,
+      "qty": 5,
+      "total_pages": 3050,
+      "rate_per_page": 6.0,
+      "amount": 18300.0
+    },
+    {
+      "sr_no": 6,
+      "title": "Deep Learning",
+      "pages": 800,
+      "qty": 5,
+      "total_pages": 4000,
+      "rate_per_page": 6.0,
+      "amount": 24000.0
+    },
+    {
+      "sr_no": 7,
+      "title": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (3rd Edition)",
+      "pages": 848,
+      "qty": 5,
+      "total_pages": 4240,
+      "rate_per_page": 6.0,
+      "amount": 25440.0
+    },
+    {
+      "sr_no": 8,
+      "title": "Speech and Language Processing (3rd Ed. Draft)",
+      "pages": 1024,
+      "qty": 5,
+      "total_pages": 5120,
+      "rate_per_page": 6.0,
+      "amount": 30720.0
+    },
+    {
+      "sr_no": 9,
+      "title": "Introduction to Autonomous Mobile Robots (2nd Edition)",
+      "pages": 472,
+      "qty": 5,
+      "total_pages": 2360,
+      "rate_per_page": 6.0,
+      "amount": 14160.0
+    },
+    {
+      "sr_no": 10,
+      "title": "Designing Data-Intensive Applications",
+      "pages": 616,
+      "qty": 5,
+      "total_pages": 3080,
+      "rate_per_page": 6.0,
+      "amount": 18480.0
+    },
+    {
+      "sr_no": 11,
+      "title": "Software Engineering",
+      "pages": 812,
+      "qty": 5,
+      "total_pages": 4060,
+      "rate_per_page": 6.0,
+      "amount": 24360.0
+    },
+    {
+      "sr_no": 12,
+      "title": "Software Engineering: A Practitioner's Approach",
+      "pages": 706,
+      "qty": 5,
+      "total_pages": 3530,
+      "rate_per_page": 6.0,
+      "amount": 21180.0
+    },
+    {
+      "sr_no": 13,
+      "title": "Software Engineering: Methods and Management",
+      "pages": 902,
+      "qty": 5,
+      "total_pages": 4510,
+      "rate_per_page": 6.0,
+      "amount": 27060.0
+    },
+    {
+      "sr_no": 14,
+      "title": "Managing Software Development Project",
+      "pages": 408,
+      "qty": 5,
+      "total_pages": 2040,
+      "rate_per_page": 6.0,
+      "amount": 12240.0
+    },
+    {
+      "sr_no": 15,
+      "title": "Software Engineering Analysis and Design",
+      "pages": 180,
+      "qty": 5,
+      "total_pages": 900,
+      "rate_per_page": 6.0,
+      "amount": 5400.0
+    },
+    {
+      "sr_no": 16,
+      "title": "Design Patterns: Elements of Reusable Object-Oriented Software",
+      "pages": 418,
+      "qty": 5,
+      "total_pages": 2090,
+      "rate_per_page": 6.0,
+      "amount": 12540.0
+    },
+    {
+      "sr_no": 17,
+      "title": "Design Patterns: Elements of Reusable Object-Oriented Software",
+      "pages": 424,
+      "qty": 5,
+      "total_pages": 2120,
+      "rate_per_page": 6.0,
+      "amount": 12720.0
+    },
+    {
+      "sr_no": 18,
+      "title": "Software Testing",
+      "pages": 410,
+      "qty": 5,
+      "total_pages": 2050,
+      "rate_per_page": 6.0,
+      "amount": 12300.0
+    },
+    {
+      "sr_no": 19,
+      "title": "Foundations of Software Testing",
+      "pages": 260,
+      "qty": 5,
+      "total_pages": 1300,
+      "rate_per_page": 6.0,
+      "amount": 7800.0
+    },
+    {
+      "sr_no": 20,
+      "title": "Software Project Management",
+      "pages": 420,
+      "qty": 5,
+      "total_pages": 2100,
+      "rate_per_page": 6.0,
+      "amount": 12600.0
+    },
+    {
+      "sr_no": 21,
+      "title": "Agile Software Development",
+      "pages": 558,
+      "qty": 5,
+      "total_pages": 2790,
+      "rate_per_page": 6.0,
+      "amount": 16740.0
+    },
+    {
+      "sr_no": 22,
+      "title": "Artificial Intelligence",
+      "pages": 384,
+      "qty": 5,
+      "total_pages": 1920,
+      "rate_per_page": 6.0,
+      "amount": 11520.0
+    },
+    {
+      "sr_no": 23,
+      "title": "Discrete Mathematics with Applications",
+      "pages": 1058,
+      "qty": 5,
+      "total_pages": 5290,
+      "rate_per_page": 6.0,
+      "amount": 31740.0
+    },
+    {
+      "sr_no": 24,
+      "title": "Data Structures & Algorithm Analysis",
+      "pages": 536,
+      "qty": 5,
+      "total_pages": 2680,
+      "rate_per_page": 6.0,
+      "amount": 16080.0
+    },
+    {
+      "sr_no": 25,
+      "title": "C Programming Language",
+      "pages": 290,
+      "qty": 5,
+      "total_pages": 1450,
+      "rate_per_page": 6.0,
+      "amount": 8700.0
+    },
+    {
+      "sr_no": 26,
+      "title": "Java: How to Program",
+      "pages": 1244,
+      "qty": 5,
+      "total_pages": 6220,
+      "rate_per_page": 6.0,
+      "amount": 37320.0
+    },
+    {
+      "sr_no": 27,
+      "title": "Introduction to Algorithms",
+      "pages": 1528,
+      "qty": 5,
+      "total_pages": 7640,
+      "rate_per_page": 6.0,
+      "amount": 45840.0
+    },
+    {
+      "sr_no": 28,
+      "title": "Data Structures & Algorithm Analysis",
+      "pages": 488,
+      "qty": 5,
+      "total_pages": 2440,
+      "rate_per_page": 6.0,
+      "amount": 14640.0
+    },
+    {
+      "sr_no": 29,
+      "title": "Operating System Concepts",
+      "pages": 1278,
+      "qty": 5,
+      "total_pages": 6390,
+      "rate_per_page": 6.0,
+      "amount": 38340.0
+    },
+    {
+      "sr_no": 30,
+      "title": "Modern Operating System",
+      "pages": 1138,
+      "qty": 5,
+      "total_pages": 5690,
+      "rate_per_page": 6.0,
+      "amount": 34140.0
+    },
+    {
+      "sr_no": 31,
+      "title": "Database System Concepts",
+      "pages": 1374,
+      "qty": 5,
+      "total_pages": 6870,
+      "rate_per_page": 6.0,
+      "amount": 41220.0
+    },
+    {
+      "sr_no": 32,
+      "title": "Fundamentals of Database Systems",
+      "pages": 1274,
+      "qty": 5,
+      "total_pages": 6370,
+      "rate_per_page": 6.0,
+      "amount": 38220.0
+    },
+    {
+      "sr_no": 33,
+      "title": "Computer Networking: A Top-Down Approach",
+      "pages": 776,
+      "qty": 5,
+      "total_pages": 3880,
+      "rate_per_page": 6.0,
+      "amount": 23280.0
+    },
+    {
+      "sr_no": 34,
+      "title": "Data Communications and Networking",
+      "pages": 1268,
+      "qty": 5,
+      "total_pages": 6340,
+      "rate_per_page": 6.0,
+      "amount": 38040.0
+    },
+    {
+      "sr_no": 35,
+      "title": "Introduction to Automata Theory, Languages, and Computation",
+      "pages": 566,
+      "qty": 5,
+      "total_pages": 2830,
+      "rate_per_page": 6.0,
+      "amount": 16980.0
+    },
+    {
+      "sr_no": 36,
+      "title": "Introduction to Computer Theory",
+      "pages": 650,
+      "qty": 5,
+      "total_pages": 3250,
+      "rate_per_page": 6.0,
+      "amount": 19500.0
+    },
+    {
+      "sr_no": 37,
+      "title": "Compilers: Principles, Techniques, and Tools",
+      "pages": 1052,
+      "qty": 5,
+      "total_pages": 5260,
+      "rate_per_page": 6.0,
+      "amount": 31560.0
+    },
+    {
+      "sr_no": 38,
+      "title": "Artificial Intelligence: A Modern Approach",
+      "pages": 2146,
+      "qty": 5,
+      "total_pages": 10730,
+      "rate_per_page": 6.0,
+      "amount": 64380.0
+    },
+    {
+      "sr_no": 39,
+      "title": "Discrete Mathematics and Its Applications",
+      "pages": 1072,
+      "qty": 5,
+      "total_pages": 5360,
+      "rate_per_page": 6.0,
+      "amount": 32160.0
+    }
+  ]
+}

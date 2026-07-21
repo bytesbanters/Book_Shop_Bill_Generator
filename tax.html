@@ -13,8 +13,8 @@
 <style>
 /* ── CSS VARIABLES ────────────────────────────────── */
 :root {
-  --col-title-w:  30%;
-  --col-author-w: 15%;
+  --col-title-w:  25%;
+  --col-author-w: 13%;
   --en-title-fs:  11.5pt;
   --en-auth-fs:   11.5pt;
 }
@@ -212,10 +212,11 @@ body { background: #7a7a7a; padding-top: 58px; }
 .col-title  { width: var(--col-title-w); }
 .col-author { width: var(--col-author-w); }
 .col-qty    { width: 5%;  }
-.col-rate   { width: 10%; }
-.col-tp     { width: 10%; }
-.col-disc   { width: 9%;  }
-.col-amt    { width: 15%; }
+.col-rate   { width: 9%;  }
+.col-tp     { width: 9%;  }
+.col-disc   { width: 8%;  }
+.col-amt    { width: 13%; }
+.col-tax    { width: 12%; }
 
 /* Data cells */
 .bill-table td.sr-td    { text-align: center; font-weight: bold; font-size: 11.5pt; }
@@ -371,6 +372,12 @@ input[type="number"] { -moz-appearance: textfield; }
            title="Changing this clears all per-row discount overrides and applies this % to every row">
   </label>
 
+  <label>Tax %:
+    <input type="number" id="inp_tax" value="5.5" min="0" max="100" step="0.5"
+           oninput="applyGlobalTax()"
+           title="Tax percentage included in the final amount column">
+  </label>
+
   <div class="divider"></div>
   <button class="tbtn" id="langToggle" onclick="toggleRowLang()"
           title="Click a row first, then use this button to toggle its language (also switches keyboard)"
@@ -379,7 +386,7 @@ input[type="number"] { -moz-appearance: textfield; }
   </button>
   <button class="tbtn" style="background:#2255aa;color:#fff;font-size:13px;padding:7px 16px"
           onclick="document.getElementById('jsonInput').click()"
-          title='Auto-fill entire bill from a JSON file.&#10;&#10;Format:&#10;{&#10;  "name": "Customer Name",&#10;  "date": "2026-05-19",&#10;  "ntn": "44358920",&#10;  "discount": 20,&#10;  "items": [&#10;    { "title": "Book Title", "author": "Author", "qty": 1, "rate": 500, "lang": "en", "disc": 15 }&#10;  ]&#10;}&#10;&#10;lang: "en" or "ur"  |  disc: row-level % (optional)&#10;See test.json for a full sample.'>
+          title='Auto-fill entire bill from a JSON file.&#10;&#10;Format:&#10;{&#10;  "name": "Customer Name",&#10;  "date": "2026-05-19",&#10;  "ntn": "44358920",&#10;  "discount": 20,&#10;  "tax": 5.5,&#10;  "items": [&#10;    { "title": "Book Title", "author": "Author", "qty": 1, "rate": 500, "lang": "en", "disc": 15 }&#10;  ]&#10;}&#10;&#10;lang: "en" or "ur"  |  disc: row-level % (optional)&#10;See test.json for a full sample.'>
     📂 Import JSON &nbsp;<span style="font-size:10px;opacity:.75">(?)</span>
   </button>
   <input type="file" id="jsonInput" accept=".json" style="display:none" onchange="importJSON(event)">
@@ -393,12 +400,12 @@ input[type="number"] { -moz-appearance: textfield; }
   </button>
   <div class="divider"></div>
   <label title="Title column width %">Title W:
-    <input type="number" id="inp_title_w" value="30" min="5" max="65" step="1"
+    <input type="number" id="inp_title_w" value="25" min="5" max="65" step="1"
            style="width:45px" oninput="setColWidths()">
     <span style="color:#aac;font-size:11px">%</span>
   </label>
   <label title="Author column width %">Auth W:
-    <input type="number" id="inp_auth_w" value="15" min="5" max="40" step="1"
+    <input type="number" id="inp_auth_w" value="13" min="5" max="40" step="1"
            style="width:45px" oninput="setColWidths()">
     <span style="color:#aac;font-size:11px">%</span>
   </label>
@@ -519,6 +526,7 @@ function makeTable(pn, isFirst) {
       <col class="col-tp">
       <col class="col-disc">
       <col class="col-amt">
+      <col class="col-tax">
     </colgroup>
     <thead>
       <tr>
@@ -529,7 +537,8 @@ function makeTable(pn, isFirst) {
         <th class="col-rate">Rate Rs.</th>
         <th class="col-tp">Total<br>Price</th>
         <th class="col-disc">Disc.</th>
-        <th class="col-amt">Amount in<br>Rs.</th>
+        <th class="col-amt">Unit Rate After<br>Discount</th>
+        <th class="col-tax tax-heading">Amount inclusive<br><span class="tax-rate-label">${esc(document.getElementById('inp_tax').value)}</span>% Tax</th>
       </tr>
     </thead>`;
 
@@ -546,6 +555,7 @@ function makeTable(pn, isFirst) {
       <td class="lbl-td"><b>TOTAL</b></td>
       <td class="cf-td"><b>B/F:</b></td>
       <td></td><td></td><td></td><td></td>
+      <td></td>
       <td class="num-td" id="bf_amt${pn}"><b>0</b></td>`;
     tbody.appendChild(bfTr);
   }
@@ -596,7 +606,8 @@ function makeTable(pn, isFirst) {
                title="Custom discount % — leave empty to use default">
         <span id="dc_${rid}"></span>
       </td>
-      <td class="calc-td" id="am_${rid}"></td>`;
+      <td class="calc-td" id="am_${rid}"></td>
+      <td class="calc-td" id="tax_${rid}"></td>`;
     tbody.appendChild(tr);
   }
 
@@ -609,6 +620,7 @@ function makeTable(pn, isFirst) {
     <td class="lbl-td" id="tot_lbl${pn}"><b>GRAND TOTAL</b></td>
     <td class="cf-td"  id="tot_cf${pn}"></td>
     <td></td><td></td><td></td><td></td>
+    <td></td>
     <td class="num-td" id="tot_amt${pn}"><b>0</b></td>`;
   tbody.appendChild(totTr);
 
@@ -659,6 +671,9 @@ function calcRow(rid) {
   setCell(`tp_${rid}`, tp);
   setCell(`dc_${rid}`, d);
   setCell(`am_${rid}`, am);
+  // The supplied prices are tax-inclusive, so this final column matches the
+  // discounted amount while clearly recording the included tax rate.
+  setCell(`tax_${rid}`, am);
   calcPageTotals(parseInt(rid.split('_')[0]));
 }
 
@@ -671,6 +686,15 @@ function applyGlobalDisc() {
       if (el) el.value = '';
     }
   }
+  recalcAll();
+}
+
+/* ── APPLY GLOBAL TAX (prices remain tax-inclusive) ── */
+function applyGlobalTax() {
+  const tax = +document.getElementById('inp_tax').value || 0;
+  document.querySelectorAll('.tax-rate-label').forEach(el => {
+    el.textContent = tax;
+  });
   recalcAll();
 }
 
@@ -689,6 +713,7 @@ function recalcAll() {
       setCell(`tp_${rid}`, tp);
       setCell(`dc_${rid}`, d);
       setCell(`am_${rid}`, am);
+      setCell(`tax_${rid}`, am);
     }
     calcPageTotals(p);
   }
@@ -834,6 +859,7 @@ function loadBillFromData(data) {
   if (data.date)                document.getElementById('inp_date').value = data.date;
   if (data.ntn)                 document.getElementById('inp_ntn').value  = data.ntn;
   if (data.discount != null)    document.getElementById('inp_disc').value = data.discount;
+  if (data.tax != null)         document.getElementById('inp_tax').value  = data.tax;
 
   const items = Array.isArray(data.items) ? data.items : [];
   const pagesNeeded = Math.max(1, Math.ceil(items.length / ROWS));
@@ -873,6 +899,7 @@ function loadBillFromData(data) {
   });
 
   syncGlobal();
+  applyGlobalTax();
   updateTotalLabels();
 }
 
@@ -919,8 +946,8 @@ function insertAtCursor(inp, text) {
 
 /* ── COLUMN WIDTH & FONT SIZE CONTROLS ─────────────── */
 function setColWidths() {
-  const tw = +document.getElementById('inp_title_w').value || 30;
-  const aw = +document.getElementById('inp_auth_w').value  || 15;
+  const tw = +document.getElementById('inp_title_w').value || 25;
+  const aw = +document.getElementById('inp_auth_w').value  || 13;
   document.documentElement.style.setProperty('--col-title-w',  tw + '%');
   document.documentElement.style.setProperty('--col-author-w', aw + '%');
 }
@@ -939,6 +966,7 @@ function exportJSON() {
     date:     document.getElementById('inp_date').value,
     ntn:      document.getElementById('inp_ntn').value,
     discount: +document.getElementById('inp_disc').value,
+    tax:      +document.getElementById('inp_tax').value,
     items:    []
   };
 
@@ -981,6 +1009,7 @@ function exportExcel() {
   const date     = document.getElementById('inp_date').value;
   const ntn      = document.getElementById('inp_ntn').value;
   const discount = +document.getElementById('inp_disc').value || 0;
+  const tax      = +document.getElementById('inp_tax').value || 0;
   const rows     = [];
   let sr = 1;
   let grandTotal = 0;
@@ -1001,7 +1030,7 @@ function exportExcel() {
       const discAmt = Math.round(total * discPct / 100);
       const amount  = total - discAmt;
       grandTotal += amount;
-      rows.push([sr++, title, author, qty, rate, total, discPct, discAmt, amount]);
+      rows.push([sr++, title, author, qty, rate, total, discAmt, amount, amount]);
     }
   }
 
@@ -1030,8 +1059,9 @@ function exportExcel() {
   ${row([cell('Date', 'String', 'Label'), cell(date)])}
   ${row([cell('NTN #', 'String', 'Label'), cell(ntn)])}
   ${row([cell('Default Discount %', 'String', 'Label'), cell(discount, 'Number')])}
+  ${row([cell('Tax %', 'String', 'Label'), cell(tax, 'Number')])}
   <Row/>
-  ${row(['Sr.', 'Title', 'Author', 'Qty', 'Rate', 'Total Price', 'Discount %', 'Discount', 'Amount'].map(v => cell(v, 'String', 'Header')))}
+  ${row(['Sr.', 'Title', 'Author', 'Qty', 'Rate', 'Total Price', 'Discount', 'Unit Rate After Discount', `Amount inclusive ${tax}% Tax`].map(v => cell(v, 'String', 'Header')))}
   ${itemRows}
   ${row([cell('GRAND TOTAL', 'String', 'Label'), cell(''), cell(''), cell(''), cell(''), cell(''), cell(''), cell(''), cell(grandTotal, 'Number', 'Label')])}
  </Table></Worksheet>

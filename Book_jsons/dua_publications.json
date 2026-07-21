@@ -1,0 +1,1899 @@
+{
+  "name": "Dar-Ul-Madina Boys School",
+  "discount": 25,
+  "items": [
+    {
+      "title": "Ahkam e Shariyat",
+      "author": "Hazrat Imam Ahmad Raza Khan Brelvi",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Ahya e Aloom Uddin",
+      "author": "Imam Ghazali",
+      "qty": 1,
+      "rate": 7000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Aien ul Faqar",
+      "author": "Hazrat Sultan Bahoo",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Al haya ul Alum",
+      "author": "Muhammad Imam gazali",
+      "qty": 1,
+      "rate": 7000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Al Hudaiya",
+      "author": "Burhan Uddin Farghani",
+      "qty": 1,
+      "rate": 8000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Amir ul Konain",
+      "author": "Hazrat Sultan Bahoo",
+      "qty": 1,
+      "rate": 700,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Ashatah lilmuaat",
+      "author": "Shah Abdul Haq Muhadas Dehlvi",
+      "qty": 1,
+      "rate": 17000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Asrar e Qadri",
+      "author": "Hazrat Sultan Bahoo",
+      "qty": 1,
+      "rate": 400,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Bahar e Shariyet",
+      "author": "Moulana Muhammad Amjad Ali",
+      "qty": 1,
+      "rate": 7000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Bhar e Sharyat",
+      "author": "Muhammad Amjad Ali Azmi",
+      "qty": 1,
+      "rate": 7000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Bukhari Sharif",
+      "author": "Imam Muhammad Bin Ismail Bukhari",
+      "qty": 1,
+      "rate": 10000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Fatava Rizviya",
+      "author": "Shah Ahmad Raza Khan",
+      "qty": 1,
+      "rate": 70000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Fezan e Sunat",
+      "author": "Alama Moulana Muhammad Ilyas Qadri",
+      "qty": 1,
+      "rate": 4000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Ghunia Tul Talbin",
+      "author": "Hazrat Sheikh Abdul Qadir Jelani",
+      "qty": 1,
+      "rate": 1495,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Hadaiq-e-Bakhshish",
+      "author": "Molana Ahmed Raza Khan",
+      "qty": 1,
+      "rate": 500,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Hujah Tul Allah Al Balghah",
+      "author": "Hazrat Shah Wali Ullah",
+      "qty": 1,
+      "rate": 2500,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Jahanum ma ly jany waly Amal",
+      "author": "Shekhul Islam Shahabudin",
+      "qty": 1,
+      "rate": 200,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Jame Tramzi Sharif",
+      "author": "Imam Tamzi",
+      "qty": 1,
+      "rate": 5500,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Janat Ma ly jany waly Ammal",
+      "author": "Hafiz Muhammad Sharfudin",
+      "qty": 1,
+      "rate": 200,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Kashaf ul Mahjoob",
+      "author": "Alama Abu ul Hasnat Muhammad Ahmad Qadri",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Khatam ul Nabuwat",
+      "author": "Hazrat Ahmad Raza Khan Brelvi",
+      "qty": 1,
+      "rate": 1500,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Kimiya e Suadat",
+      "author": "Imam Ghazali",
+      "qty": 1,
+      "rate": 1900,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Kitab ul Hind",
+      "author": "Al Beroni",
+      "qty": 1,
+      "rate": 900,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "malfozat e Roomi",
+      "author": "Moulana Jalal ud Din Roomi",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Masnad Amam e Azam",
+      "author": "Hazrat Imam Abu Hanifah",
+      "qty": 1,
+      "rate": 3000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Menhaj ul Aabidin",
+      "author": "Hazrat Imam Ghazali",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Mishkat al-Masabih",
+      "author": "Imam Tabrizi",
+      "qty": 1,
+      "rate": 5500,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Mishkat Sharif",
+      "author": "Imam Wali Uddin Muhammad Bin Abdullah",
+      "qty": 1,
+      "rate": 4000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Mouta Imam Malik",
+      "author": "Imam Malik",
+      "qty": 1,
+      "rate": 3000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "mukashfat ul Qaloob",
+      "author": "Imam Muhammad Ghazali",
+      "qty": 1,
+      "rate": 900,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Noor ul Dadoor Fi Shareh ul Qaboor",
+      "author": "Imam Jlal u Din",
+      "qty": 1,
+      "rate": 1500,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Seerat ul Ambiya",
+      "author": "Al madinah tul Ilmiya",
+      "qty": 1,
+      "rate": 1500,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Riaz ul Sualehin",
+      "author": "Al Imam Abi Zikriya Yehya Bin Sharaf",
+      "qty": 1,
+      "rate": 8000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Sahih Bukhari",
+      "author": "Imam Bukhari",
+      "qty": 1,
+      "rate": 10000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Sahih Muslim Sharif",
+      "author": "Imam Muslim Bin Hejaj",
+      "qty": 1,
+      "rate": 7000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Seerat-e-Mustafa",
+      "author": "Abdul Mustafa Azmi",
+      "qty": 1,
+      "rate": 900,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Shah Jo Risalo",
+      "author": "Shah Abdul Latif Bhitai",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Sharah ul Sadoor",
+      "author": "Alama Jalal Ud Din Seyoti",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Shwahd ul haq",
+      "author": "Alama Yousaf Bin Ismaiel",
+      "qty": 1,
+      "rate": 2200,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Sirat ul Jinan",
+      "author": "Al madinah tul Ilmiya",
+      "qty": 1,
+      "rate": 35000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Sunan Abu Daoud Sharif",
+      "author": "Imam Abu Daud Suliman",
+      "qty": 1,
+      "rate": 6500,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Sunan Ibn e Majah",
+      "author": "Imam Muhammad Bin Yazid Ibn Majah",
+      "qty": 1,
+      "rate": 5000,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Sunan Nisai",
+      "author": "Imam Ahmad Bin Shuaib Nisai",
+      "qty": 1,
+      "rate": 6500,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Zia ul Nabi 2",
+      "author": "Pir Muhammad Karim Shah",
+      "qty": 1,
+      "rate": 1800,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Zulfo zanjeer",
+      "author": "Raeesul tehreer alama arshadulqadri",
+      "qty": 1,
+      "rate": 900,
+      "lang": "en",
+      "cat": "isl"
+    },
+    {
+      "title": "Amam ahmad Bin Hunbel",
+      "author": "Nasar ullah Khan Aziz",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Ghazi Ilam Din Shahid",
+      "author": "Mian Muhammad Abu Alfateh",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Gufat -o- Shanid",
+      "author": "Hassan Rizvi",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Haroon Rashid",
+      "author": "Abdul Jabbar aljomard",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Hazrat Baba Farid Uddin masoud Gunj Shakir",
+      "author": "Wahid Ahmad Masoud",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Hazrat Boo Ali Qalandar",
+      "author": "Iqbal Selahuddin",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Hazrat Mehboob Alahi",
+      "author": "Alama Ikhlaq Hassan Dehalvi",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Hazrat Sakhi Sarwar",
+      "author": "Prof. Hameed Khan Hameed",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Hazrat Shah Wali Ullah",
+      "author": "Ihsan Ul Haq Akhtar",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Qudrat Ullah Shehab",
+      "author": "Prof. Faridah Nazir",
+      "qty": 1,
+      "rate": 1500,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Rabia Basri",
+      "author": "Abdul Samad Sabri",
+      "qty": 1,
+      "rate": 795,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Rodad e Qafas",
+      "author": "Syed Ali Gelani",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Sakina Tul Oliya",
+      "author": "Shezadah Muhammad Dara al Shakoh Qadri",
+      "qty": 1,
+      "rate": 500,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Shah Abdul Aziz Muhadas Sehalvi",
+      "author": "Dr. Suriya Dar",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Shehab Nama",
+      "author": "Qudrat ullah Shehab",
+      "qty": 1,
+      "rate": 3000,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Sultan Sulah ud Din Ayoubi",
+      "author": "Raja Tariq Mehmood",
+      "qty": 1,
+      "rate": 995,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Tazkara e Ghosiya",
+      "author": "Moulana Shah Gull Hassan",
+      "qty": 1,
+      "rate": 1800,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Tazkara e mashaiekh e Qadariya",
+      "author": "Jenab Muhammad Din Kalim Qadri",
+      "qty": 1,
+      "rate": 1500,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Tazkara mujadad alaf Sani",
+      "author": "Moulana Muhammad Manzor naamani",
+      "qty": 1,
+      "rate": 1500,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Tazkara Oliya e Pakistan",
+      "author": "Alalmah Alim Faqri",
+      "qty": 1,
+      "rate": 2400,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Tazkarh Mashaiekh Naqash Bandiya",
+      "author": "Alama Muhammad Noor Bakhish Tuwakli",
+      "qty": 1,
+      "rate": 1500,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Umar bin Abdul Aziz",
+      "author": "Ahmad Zaki Safwat",
+      "qty": 1,
+      "rate": 1500,
+      "lang": "en",
+      "cat": "Biography"
+    },
+    {
+      "title": "Adventures in Coding: Programming with Scratch",
+      "author": "Matt McCarthy",
+      "qty": 1,
+      "rate": 2200,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Automate the Boring Stuff with Python",
+      "author": "Al Sweigart",
+      "qty": 1,
+      "rate": 1900,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Coding for Kids: Python",
+      "author": "Adrienne B. Tacke",
+      "qty": 1,
+      "rate": 2100,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Coding Projects in Scratch",
+      "author": "Jon Woodcock",
+      "qty": 1,
+      "rate": 2600,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Computer Dictionary",
+      "author": "Muhammad  Bahir",
+      "qty": 1,
+      "rate": 3200,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Computer KeyBoard Short Cut Keys",
+      "author": "Irfanah Yasmin",
+      "qty": 1,
+      "rate": 1600,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Computer Ki Basic Programing",
+      "author": "Muhammad  Bashir",
+      "qty": 1,
+      "rate": 3000,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Computer Science",
+      "author": "Muhammad  Manzor Akhtar",
+      "qty": 1,
+      "rate": 2600,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Computer Science for Kids: A Hands-on Guide to Coding",
+      "author": "Carol V. W. de Lemos",
+      "qty": 1,
+      "rate": 3200,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Computer Science Unplugged: Activities and Games to Explore Computer Science Concepts",
+      "author": "Tim Bell, Ian H. Witten, and Jenny L. Preece",
+      "qty": 1,
+      "rate": 3600,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Computer Trebal Shoting Gaid",
+      "author": "Naeem Ahsan",
+      "qty": 1,
+      "rate": 2900,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Cracking the Coding Interview",
+      "author": "Gayle Laakmann McDowell",
+      "qty": 1,
+      "rate": 2500,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Database Systems",
+      "author": "Catherine Ricardo",
+      "qty": 1,
+      "rate": 2000,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Deep Learning for Coders with Fastai and PyTorch",
+      "author": "Jeremy Howard & Sylvain Gugger",
+      "qty": 1,
+      "rate": 3100,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Getting Things Done On Your P.C.",
+      "author": "Richard Gilberd",
+      "qty": 1,
+      "rate": 4600,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Girls Who Code: Learn to Code and Change the World",
+      "author": "Reshma Saujani",
+      "qty": 1,
+      "rate": 1800,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Head First Java",
+      "author": "Kathy Sierra & Bert Bates",
+      "qty": 1,
+      "rate": 1400,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Hello Ruby: Adventures in Coding",
+      "author": "Linda Liukas",
+      "qty": 1,
+      "rate": 3800,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "HTML and CSS: Design and Build Websites",
+      "author": "Jon Duckett",
+      "qty": 1,
+      "rate": 3200,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "JavaScript and JQuery: Interactive Front-End Web Development",
+      "author": "Jon Duckett",
+      "qty": 1,
+      "rate": 2800,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Micro Soft Acess X.P. 2002",
+      "author": "Johebra kan",
+      "qty": 1,
+      "rate": 1600,
+      "lang": "en"
+    },
+    {
+      "title": "Micro Soft Office X.P.2002",
+      "author": "Johebrakon",
+      "qty": 1,
+      "rate": 1600,
+      "lang": "en"
+    },
+    {
+      "title": "Micro Soft Power Point  X.P. 2002",
+      "author": "Johebrakon",
+      "qty": 1,
+      "rate": 1800,
+      "lang": "en"
+    },
+    {
+      "title": "Microsoft Word",
+      "author": "Naeem Ahsan",
+      "qty": 1,
+      "rate": 1900,
+      "lang": "en"
+    },
+    {
+      "title": "Microsoft Word  2000",
+      "author": "Yasir Jawad",
+      "qty": 1,
+      "rate": 2900,
+      "lang": "en"
+    },
+    {
+      "title": "Minni Computer Dictionary",
+      "author": "Syed Waqar Ali Hashmi",
+      "qty": 1,
+      "rate": 2300,
+      "lang": "en"
+    },
+    {
+      "title": "Moicrosoft Acess xp",
+      "author": "Fawaz Afzal",
+      "qty": 1,
+      "rate": 1900,
+      "lang": "en"
+    },
+    {
+      "title": "MS Excel 2000",
+      "author": "Muzaffar Ijaz",
+      "qty": 1,
+      "rate": 2400,
+      "lang": "en"
+    },
+    {
+      "title": "Oracle 8 S Q L Programming & Tuning",
+      "author": "Don Burleson",
+      "qty": 1,
+      "rate": 2900,
+      "lang": "en"
+    },
+    {
+      "title": "Python Crash Course",
+      "author": "Eric Matthes",
+      "qty": 1,
+      "rate": 2800,
+      "lang": "en"
+    },
+    {
+      "title": "Python for Kids: A Playful Introduction to Programming",
+      "author": "Jason R. Briggs",
+      "qty": 1,
+      "rate": 3200,
+      "lang": "en"
+    },
+    {
+      "title": "Scratch Programming Playground: Learn to Program by Making Games",
+      "author": "Al Sweigart",
+      "qty": 1,
+      "rate": 1800,
+      "lang": "en"
+    },
+    {
+      "title": "Teach Yourself P L / S Q L In 21 Days",
+      "author": "Tom Luers",
+      "qty": 1,
+      "rate": 2600,
+      "lang": "en"
+    },
+    {
+      "title": "The Elements of Computing Systems",
+      "author": "Noam Nisan & Shimon Schocken",
+      "qty": 1,
+      "rate": 2000,
+      "lang": "en"
+    },
+    {
+      "title": "The Everything Kids' Science Experiments Book",
+      "author": "Kathiann M. Kowalski",
+      "qty": 1,
+      "rate": 3800,
+      "lang": "en"
+    },
+    {
+      "title": "The Pragmatic Programmer: Your Journey To Mastery",
+      "author": "Andrew Hunt & David Thomas",
+      "qty": 1,
+      "rate": 3200,
+      "lang": "en"
+    },
+    {
+      "title": "The Ultimate Guide to Scratch",
+      "author": "A. T. Davidson",
+      "qty": 1,
+      "rate": 1600,
+      "lang": "en"
+    },
+    {
+      "title": "Using Wordperfect 6.1 For Windows Special Edition",
+      "author": "Gordon Mc Comb",
+      "qty": 1,
+      "rate": 1800,
+      "lang": "en"
+    },
+    {
+      "title": "Windows 98",
+      "author": "Jenfar Fulton",
+      "qty": 1,
+      "rate": 3200,
+      "lang": "en"
+    },
+    {
+      "title": "Windows Instaltion Guide",
+      "author": "Arshad Mahmood Shah",
+      "qty": 1,
+      "rate": 4400,
+      "lang": "en",
+      "cat": "comp"
+    },
+    {
+      "title": "Feroz Sons English To English And Urdu Dictionary",
+      "author": "Feroz Sons",
+      "qty": 1,
+      "rate": 1995,
+      "lang": "en",
+      "cat": "Dic"
+    },
+    {
+      "title": "Feroz ul Lughat Arbi Urdu Dictionary",
+      "author": "Feroz Sons",
+      "qty": 1,
+      "rate": 2500,
+      "lang": "en",
+      "cat": "Dic"
+    },
+    {
+      "title": "Feroz ul Lughat Urdu Dictionary",
+      "author": "Moulvi Feroz u Din",
+      "qty": 1,
+      "rate": 3500,
+      "lang": "en",
+      "cat": "Dic"
+    },
+    {
+      "title": "Jamia ul Lughat Urdu",
+      "author": "Moulan Muhammad Rafi",
+      "qty": 1,
+      "rate": 3500,
+      "lang": "en",
+      "cat": "Dic"
+    },
+    {
+      "title": "Jadeed Taleemi Falsafah",
+      "author": "Iqbal Khan",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Edu"
+    },
+    {
+      "title": "Riyasat",
+      "author": "Aflatoon",
+      "qty": 1,
+      "rate": 1500,
+      "lang": "en",
+      "cat": "Edu"
+    },
+    {
+      "title": "Tadris Urdu",
+      "author": "Muhammad Esa Khan",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Edu"
+    },
+    {
+      "title": "Encyclopaedia Of Animals",
+      "author": "Dr. Maarice Burton",
+      "qty": 1,
+      "rate": 8000,
+      "lang": "en",
+      "cat": "Encyclo"
+    },
+    {
+      "title": "Encyclopaedia Of Modern  Methods Of Teaching",
+      "author": "E.J.S. Lay",
+      "qty": 1,
+      "rate": 6000,
+      "lang": "en",
+      "cat": "Encyclo"
+    },
+    {
+      "title": "Encyclopedia Of The World",
+      "author": "Treasure Press",
+      "qty": 1,
+      "rate": 8000,
+      "lang": "en",
+      "cat": "Encyclo"
+    },
+    {
+      "title": "Illustrated Encyclopaedia Of Facts And Figures",
+      "author": "Long man",
+      "qty": 1,
+      "rate": 9000,
+      "lang": "en",
+      "cat": "Encyclo"
+    },
+    {
+      "title": "The Birds Of Pakistan",
+      "author": "T.J.R.Roberts",
+      "qty": 1,
+      "rate": 8000,
+      "lang": "en",
+      "cat": "Encyclo"
+    },
+    {
+      "title": "The MacMillan Encyclopedia",
+      "author": "Nomis Mcwhirter",
+      "qty": 1,
+      "rate": 8000,
+      "lang": "en",
+      "cat": "Encyclo"
+    },
+    {
+      "title": "The Modern Encyclopaedia of Universal Information",
+      "author": "Charles Annandale",
+      "qty": 1,
+      "rate": 14000,
+      "lang": "en",
+      "cat": "Encyclo"
+    },
+    {
+      "title": "The New Encyclopedia Britanica",
+      "author": "University Of Chicogo",
+      "qty": 1,
+      "rate": 20000,
+      "lang": "en",
+      "cat": "Encyclo"
+    },
+    {
+      "title": "A Tale of Two Cities",
+      "author": "Charles Dickens",
+      "qty": 1,
+      "rate": 1250,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Alice's Adventures in Wonderland",
+      "author": "Lewis Carroll",
+      "qty": 1,
+      "rate": 1250,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Aliver Twist",
+      "author": "Charles Dickens",
+      "qty": 1,
+      "rate": 1250,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Animal Farm",
+      "author": "Hans Christian Andersen",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Anne of Green Gables",
+      "author": "L.M. Montgomery",
+      "qty": 1,
+      "rate": 1250,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Black Beauty",
+      "author": "Anna Sewell",
+      "qty": 1,
+      "rate": 1250,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Charlie and the Chocolate Factory",
+      "author": "Roald Dahl",
+      "qty": 1,
+      "rate": 1200,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Charlotte's Web",
+      "author": "E.B. White",
+      "qty": 1,
+      "rate": 1350,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "David Copperfield",
+      "author": "Charles Dickens",
+      "qty": 1,
+      "rate": 1300,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Great Expectations",
+      "author": "Charles Dickens",
+      "qty": 1,
+      "rate": 1250,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Gulliver's Travels",
+      "author": "Jonathan Swift",
+      "qty": 1,
+      "rate": 1300,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Intenational Affairs",
+      "author": "Dr. Safdar Mehmood",
+      "qty": 1,
+      "rate": 3500,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Jane Eyre",
+      "author": "Charlotte Brontë",
+      "qty": 1,
+      "rate": 1300,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Moenjodaro",
+      "author": "Ihsan nadeem",
+      "qty": 1,
+      "rate": 4000,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Robinson Crusoe",
+      "author": "Daniel Defoe",
+      "qty": 1,
+      "rate": 799,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "qty": 1,
+      "rate": 1250,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "The Adventures of Tom Sawyer",
+      "author": "Mark Twain",
+      "qty": 1,
+      "rate": 1250,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "qty": 1,
+      "rate": 1150,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "The Call of the Wild",
+      "author": "Jack London",
+      "qty": 1,
+      "rate": 2200,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "The Jungle Book",
+      "author": "Rudyard Kipling",
+      "qty": 1,
+      "rate": 1250,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "The Lion, the Witch, and the Wardrobe",
+      "author": "C.S. Lewis",
+      "qty": 1,
+      "rate": 1150,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "The Magic Faraway Tree",
+      "author": "Enid Blyton",
+      "qty": 1,
+      "rate": 599,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "The Secret Garden",
+      "author": "Frances Hodgson Burnett",
+      "qty": 1,
+      "rate": 699,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "The Wind in the Willows",
+      "author": "Kenneth Grahame",
+      "qty": 1,
+      "rate": 250,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Things Fall Apart",
+      "author": "Chinua Achebe",
+      "qty": 1,
+      "rate": 350,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "qty": 1,
+      "rate": 250,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Treasure Island",
+      "author": "Robert Louis Stevenson",
+      "qty": 1,
+      "rate": 250,
+      "lang": "en",
+      "cat": "Eng"
+    },
+    {
+      "title": "Aurangzeb Alamgir",
+      "author": "Sher Ali Khan",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "His"
+    },
+    {
+      "title": "Balochistan",
+      "author": "Syed Iqbal Ahmad",
+      "qty": 1,
+      "rate": 1595,
+      "lang": "en",
+      "cat": "His"
+    },
+    {
+      "title": "Fateh Makkah",
+      "author": "Muhammad Ahmad Bashamil",
+      "qty": 1,
+      "rate": 1200,
+      "lang": "en",
+      "cat": "His"
+    },
+    {
+      "title": "Khutbat-e-Iqbal",
+      "author": "Dr. Javed Iqbal",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "His"
+    },
+    {
+      "title": "Muqadma Ibn e Khaldoon",
+      "author": "Alama Abdul Rehman Ibn -e- Khaldoon",
+      "qty": 1,
+      "rate": 1300,
+      "lang": "en",
+      "cat": "His"
+    },
+    {
+      "title": "Musalman Undlas Main",
+      "author": "Rashid Akhtar Nadvi",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "His"
+    },
+    {
+      "title": "Musalmanoan Ke Seyasi Afkar",
+      "author": "Prof. Rashid Ahmad",
+      "qty": 1,
+      "rate": 1500,
+      "lang": "en",
+      "cat": "His"
+    },
+    {
+      "title": "Musalmanoan Ki Seyasi Tareekh",
+      "author": "Zahid Ch.",
+      "qty": 1,
+      "rate": 12000,
+      "lang": "en",
+      "cat": "His"
+    },
+    {
+      "title": "Oxford Atlas for Pakistan",
+      "author": "Oxpord University",
+      "qty": 1,
+      "rate": 2650,
+      "lang": "en",
+      "cat": "His"
+    },
+    {
+      "title": "Tareekh-e-Islam",
+      "author": "Akbar Shah Najeeb Abadi",
+      "qty": 1,
+      "rate": 3000,
+      "lang": "en",
+      "cat": "His"
+    },
+    {
+      "title": "The Children's Animal Atlas",
+      "author": "David Lambert",
+      "qty": 1,
+      "rate": 8000,
+      "lang": "en",
+      "cat": "His"
+    },
+    {
+      "title": "The International Atlas",
+      "author": "Johan Bratholomew",
+      "qty": 1,
+      "rate": 1400,
+      "lang": "en",
+      "cat": "His"
+    },
+    {
+      "title": "The Struggle For Pakistan",
+      "author": "Ishtiaq Hussin Qureshi",
+      "qty": 1,
+      "rate": 1600,
+      "lang": "en",
+      "cat": "his"
+    },
+    {
+      "title": "A Place for Zero",
+      "author": "by Angeline Sparagna LoPresti",
+      "qty": 1,
+      "rate": 1800,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "Basic Math Concepts",
+      "author": "Dr. Syed Zulfiqar Ali",
+      "qty": 1,
+      "rate": 2400,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "Big Numbers and Large Counting",
+      "author": "by David M. Schwartz",
+      "qty": 1,
+      "rate": 3000,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "Fun with Numbers",
+      "author": "Dr. Pervez Hoodbhoy",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "How Big Is a Foot?",
+      "author": "by Rolf Myller",
+      "qty": 1,
+      "rate": 1800,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "How Not to Be Wrong: The Power of Mathematical Thinking",
+      "author": "Jordan Ellenberg",
+      "qty": 1,
+      "rate": 2400,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "How to Solve It",
+      "author": "George Polya",
+      "qty": 1,
+      "rate": 1900,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "Innumeracy: Mathematical Illiteracy and Its Consequences",
+      "author": "John Allen Paulos",
+      "qty": 1,
+      "rate": 3200,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "Let's Do Math!",
+      "author": "by Kirsteen Rogers",
+      "qty": 1,
+      "rate": 1600,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "Math Adventures: The Counting Quest",
+      "author": "David Adler",
+      "qty": 1,
+      "rate": 2800,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "Math Curse",
+      "author": "by Jon Scieszka",
+      "qty": 1,
+      "rate": 2600,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "Math Doesn't Suck",
+      "author": "Danica McKellar",
+      "qty": 1,
+      "rate": 1900,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "Mathemagic! Number Tricks",
+      "author": "Lynda Colgan",
+      "qty": 1,
+      "rate": 2000,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "Mathematics Minus Fear",
+      "author": "Lawrence Potter",
+      "qty": 1,
+      "rate": 2600,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "Math-terpieces: The Art of Problem Solving",
+      "author": "Greg Tang",
+      "qty": 1,
+      "rate": 2700,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "One Grain of Rice: A Mathematical Folktale",
+      "author": "Demi",
+      "qty": 1,
+      "rate": 1900,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "Powers of Ten: A Book About the Relative Size of Things",
+      "author": "Philip Morrison",
+      "qty": 1,
+      "rate": 2600,
+      "lang": "en",
+      "cat": "Maths"
+    },
+    {
+      "title": "A Brief History of Time",
+      "author": "Stephen Hawking",
+      "qty": 1,
+      "rate": 750,
+      "lang": "en",
+      "cat": "Sci"
+    },
+    {
+      "title": "Cosmos",
+      "author": "Carl Sagan",
+      "qty": 1,
+      "rate": 1600,
+      "lang": "en",
+      "cat": "Sci"
+    },
+    {
+      "title": "Raz e Heyat",
+      "author": "Moulana Wahid Uddin Khan",
+      "qty": 1,
+      "rate": 900,
+      "lang": "en",
+      "cat": "Sci"
+    },
+    {
+      "title": "Amir Bap Ghareb Bap",
+      "author": "Robret T Qu Saw",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Asrar o Ramoz",
+      "author": "Iqbal",
+      "qty": 1,
+      "rate": 700,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Ball e Jabraeel",
+      "author": "Iqbal",
+      "qty": 1,
+      "rate": 600,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Bang-e-Dra",
+      "author": "Allama Iqbal",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Bostan e Sheikh Saadi",
+      "author": "Sheikh Sharaf -U- din Saadi",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Butt Tamiziyan",
+      "author": "Muhammad Younus Butt Dr.",
+      "qty": 1,
+      "rate": 1200,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Chacha Chakan",
+      "author": "Imtiyaz Ali Taj",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Choraha",
+      "author": "Hassan Nesar",
+      "qty": 1,
+      "rate": 995,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Dal Dalia",
+      "author": "Zafar Iqbal",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Diwan e Ghalib",
+      "author": "Mirza Asad Ullah Khan Ghalib",
+      "qty": 1,
+      "rate": 1895,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Diwan e Hali",
+      "author": "Altaf Hussain Hali",
+      "qty": 1,
+      "rate": 1200,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Diwan e Momun",
+      "author": "Hakim Momun  Khan Momin",
+      "qty": 1,
+      "rate": 900,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Duniya Ke Mulkoan Ka Tuaraf",
+      "author": "Syed Arif Nonari",
+      "qty": 1,
+      "rate": 500,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Emergency",
+      "author": "Saddique Salik",
+      "qty": 1,
+      "rate": 600,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Goroan Ke Des main",
+      "author": "Ata UlHaq Qasmi",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Hakayat e Roomi",
+      "author": "Moulana Jalal Ud din Roomi",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Harif Harif Haqiqat",
+      "author": "wsif Ali wasif",
+      "qty": 1,
+      "rate": 900,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Hayat-e-Ghalib",
+      "author": "Altaf Hussain Hali",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Hazaar Dastaan",
+      "author": "Muhammad Khalid Akhtar",
+      "qty": 1,
+      "rate": 1800,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Hikaayat-e-Saadi",
+      "author": "Sheikh Saadi",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Hum Sub Umid say Hain",
+      "author": "Muhammad Younus Butt Dr.",
+      "qty": 1,
+      "rate": 900,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Hunza Dastan",
+      "author": "Mustansar Hussain Tarar",
+      "qty": 1,
+      "rate": 1400,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Ilam ul Iqtesad",
+      "author": "Dr. Allama Muhammad Iqbal",
+      "qty": 1,
+      "rate": 1200,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Javid Namah",
+      "author": "Iqbal",
+      "qty": 1,
+      "rate": 995,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Jepsi",
+      "author": "Mustansar Hussain Tarar",
+      "qty": 1,
+      "rate": 900,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Kalaam Faiz",
+      "author": "Faiz Ahmed Faiz",
+      "qty": 1,
+      "rate": 1400,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Khana Badosh",
+      "author": "Mustansar Hussain Tarar",
+      "qty": 1,
+      "rate": 1600,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Kheloan Ke Almi Record",
+      "author": "Sajid Ihsan",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Kuliyat e Aatish",
+      "author": "Khwaja Haider Ali Aatish",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Kuliyat e Iqbal",
+      "author": "Iqbal",
+      "qty": 1,
+      "rate": 2500,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Kuliyat e Khalil Jabran",
+      "author": "Haider Javid Syed",
+      "qty": 1,
+      "rate": 3000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Kuliyat e Mir",
+      "author": "Mir Taqi Mir",
+      "qty": 1,
+      "rate": 2500,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Kulliyat-e-Ghalib",
+      "author": "Mirza Ghalib",
+      "qty": 1,
+      "rate": 2800,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Little Women",
+      "author": "Louisa May Alcott",
+      "qty": 1,
+      "rate": 1250,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Matilda",
+      "author": "Roal Dahl",
+      "qty": 1,
+      "rate": 1200,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Mirza Ghalib Ke Khutoot",
+      "author": "Mirza Ghalib",
+      "qty": 1,
+      "rate": 3000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Naqash e Bahoo",
+      "author": "Sultan Bahoo",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Peyam e Mashraq",
+      "author": "Allam Muhammad Iqbal",
+      "qty": 1,
+      "rate": 995,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Pitras Ke Mazamin",
+      "author": "Pitras Bukhari",
+      "qty": 1,
+      "rate": 500,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "qty": 1,
+      "rate": 250,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Punjab",
+      "author": "Dr. Ghulam Hussain Zulfiqar",
+      "qty": 1,
+      "rate": 1500,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Samar Qand ka Shaheen",
+      "author": "Riaz Javid",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Shab e Charagh",
+      "author": "Wasif Ali Wasif",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Urdu Graimer",
+      "author": "Sayed Irshad Naqvi",
+      "qty": 1,
+      "rate": 700,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Urdu Ki Aakhri Kitab",
+      "author": "Ibn Insha",
+      "qty": 1,
+      "rate": 660,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Urdu Nasar Ki Dastan",
+      "author": "A.Hameed",
+      "qty": 1,
+      "rate": 6000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Wasif Ba Safa",
+      "author": "Dr. Makhdoom Muhammad Hussain",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Zabor e Ajam",
+      "author": "Iqbal",
+      "qty": 1,
+      "rate": 695,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Zarb-e-Kaleem",
+      "author": "Allama Iqbal",
+      "qty": 1,
+      "rate": 600,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Zavia",
+      "author": "Ashfaq Ahmad",
+      "qty": 1,
+      "rate": 4200,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Abeyat e Sultan Bahoo",
+      "author": "Dr. Muhammad Bashir Goraiya",
+      "qty": 1,
+      "rate": 1500,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Ahsan ul Qisas",
+      "author": "Maulvi Ghulam Rasool Alam Puri",
+      "qty": 1,
+      "rate": 2000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Arbi Urdu Bol Chal",
+      "author": "Ghulam Ahmad Hurari",
+      "qty": 1,
+      "rate": 800,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Dewan e Hali",
+      "author": "Altaf Hussain Hali",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Gulistan e Saadi",
+      "author": "Sheikh Saadi Shearzi",
+      "qty": 1,
+      "rate": 595,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Hum Urdu Kese Parhaain",
+      "author": "Maun Uddin",
+      "qty": 1,
+      "rate": 600,
+      "lang": "en",
+      "cat": "Urdu"
+    },
+    {
+      "title": "Jadeed Farsi Urdu Bol Chal",
+      "author": "Prof. Muhammad Ashraf",
+      "qty": 1,
+      "rate": 1000,
+      "lang": "en",
+      "cat": "Urdu"
+    }
+  ]
+}
